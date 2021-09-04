@@ -1,5 +1,4 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -9,7 +8,7 @@ import "../scss/style.scss"
 
 const IndexPage = () => {
   return (
-    <p>
+    <>
       <StaticImage
         src="../images/topimage.jpg"
         alt="珈琲の画像"
@@ -18,7 +17,7 @@ const IndexPage = () => {
       />
 
       <BlogList />
-    </p>
+    </>
   )
 }
 

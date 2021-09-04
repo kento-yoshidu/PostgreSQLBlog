@@ -1,0 +1,27 @@
+.section {
+	width: 70vw;
+	margin: 50px auto;
+
+	h2 {
+		margin-bottom: 50px;
+		font-size: 2rem;
+	}
+	.blogList {
+		list-style: none;
+
+		.listItem {
+			margin-bottom: 50px;
+			p {
+				margin-bottom: 10px;
+				time {
+					font-size: 1rem;
+				}
+			}
+			a {
+				display: block;
+				margin-top: 20px;
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
