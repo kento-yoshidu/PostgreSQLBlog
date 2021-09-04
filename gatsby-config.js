@@ -43,7 +43,7 @@ module.exports = {
       resolve: "gatsby-source-microcms",
       options: {
         apiKey: process.env.API_KEY,
-        serviceId: 'toriwatari',
+        serviceId: 'jamsample',
         apis: [
           {
             endpoint: "blog",
