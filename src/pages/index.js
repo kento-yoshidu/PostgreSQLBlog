@@ -2,6 +2,7 @@ import React from "react"
 
 import { StaticImage } from "gatsby-plugin-image"
 
+import FixedHeader from "../components/fixedHeader"
 import BlogList from "../components/blogList"
 
 import "../scss/style.scss"
@@ -9,6 +10,8 @@ import "../scss/style.scss"
 const IndexPage = () => {
   return (
     <>
+      <FixedHeader />
+
       <StaticImage
         src="../images/topimage.jpg"
         alt="珈琲の画像"
