@@ -1,0 +1,61 @@
+.blogPost {
+	width: 50%;
+	margin: 0 auto;
+	padding: 100px 0;
+
+	h1 {
+		margin-bottom: 30px;
+		padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+		background: #f4f4f4;/*背景色*/
+		border-left: solid 5px #7db4e6;/*左線*/
+		border-bottom: solid 3px #d7d7d7;/*下線*/
+		color: #494949;/*文字色*/
+		font-size: 2.8rem;
+	}
+
+	h2 {
+		margin: 40px 0 0;
+		background: linear-gradient(transparent 70%, #7db4e6 70%);
+		font-size: 2.5rem;
+	}
+
+	h3 {
+		margin: 40px 0 0;
+		font-size: 2rem;
+	}
+
+	p {
+		margin-bottom: 15px;
+		font-size: 1.2rem;
+		line-height: 1.5;
+		letter-spacing: 1px;
+		text-indent: 1rem;
+	}
+
+	img {
+		width: 95%;
+		box-shadow: 0 0 3px 3px #eee;
+	}
+
+	blockquote {
+		padding: 15px 30px;
+		background-color: #ccc;
+		border-radius: 2px;
+		font-size: 1.2rem;
+		line-height: 1.4;
+	}
+
+	ul {
+		list-style: none;
+		li {
+			font-size: 1.3rem;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.blogPost {
+		width: 95%;
+	}	
+}
