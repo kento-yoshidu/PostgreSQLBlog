@@ -1,7 +1,7 @@
 @import "../scss/variables";
 
 .section {
-	width: 70vw;
+	width: 80vw;
 	margin: 50px auto;
 
 	h2 {
@@ -10,24 +10,38 @@
 	}
 	.blogList {
 		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
 		.listItem {
 			margin-bottom: 50px;
-			p {
-				margin-bottom: 10px;
-				time {
-					font-size: 1rem;
-				}
-			}
+			padding: 10px 10px;
+			width: 30%;
 			a {
 				display: block;
-				margin-top: 20px;
+				margin-bottom: 20px;
 				color: #444;
 				font-size: 1.3rem;
 				font-weight: 500;
 				transition: .2s;
+				line-height: 1.5;
 				&:hover {
 					color: $main-color;
+				}
+			}
+			.imgWrapper {
+				height: 250px;
+				img {
+					width: 100%;
+					margin-bottom: 30px;
+					display: block;
+				}
+			}
+			.timeWrapper {
+				margin-bottom: 20px;
+				time {
+					font-size: 1rem;
 				}
 			}
 		}
