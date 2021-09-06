@@ -3,6 +3,13 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 import * as Styles from "../styles/blogList.module.scss"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faUndo ,faFolder, faTags } from "@fortawesome/free-solid-svg-icons"
+
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
+
 const BlogList = () =>{ 
 
 	const { allMicrocmsBlog } = useStaticQuery(
@@ -16,6 +23,9 @@ const BlogList = () =>{
 							body
 							update(formatString: "YYYY年MM月DD日")
 							date(formatString: "YYYY年MM月DD日")
+							image {
+								url
+							}
 						}
 					}
 				}
@@ -32,8 +42,16 @@ const BlogList = () =>{
 						key={node.blogId}
 						className={Styles.listItem}
 					>
-						<p><time>投稿日時 {node.date}</time></p>
-						<p><time>更新日時 {node.update}</time></p>
+						<div className={Styles.imgWrapper}>
+							<img
+								src={node.image.url}
+							/>
+						</div>
+						<div className={Styles.timeWrapper}>
+							<time>
+								<FontAwesomeIcon icon={faUndo} /> {node.date}
+							</time>
+						</div>
 						<Link
 							to={`/blog/${node.blogId}/`}
 						>
