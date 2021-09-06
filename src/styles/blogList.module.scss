@@ -1,3 +1,5 @@
+@import "../scss/variables";
+
 .section {
 	width: 70vw;
 	margin: 50px auto;
@@ -20,7 +22,13 @@
 			a {
 				display: block;
 				margin-top: 20px;
+				color: #444;
 				font-size: 1.3rem;
+				font-weight: 500;
+				transition: .2s;
+				&:hover {
+					color: $main-color;
+				}
 			}
 		}
 	}
