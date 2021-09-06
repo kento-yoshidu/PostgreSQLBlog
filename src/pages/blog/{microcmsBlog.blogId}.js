@@ -1,14 +1,20 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import Seo from "../../components/seo"
 import FixedHeader from "../../components/fixedHeader"
 import BlogHero from "../../components/blogHero"
 
 import * as Styles from "../../styles/blogPost.module.scss"
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, location }) => {
   return (
     <>
+      <Seo
+        pagetitle={data.microcmsBlog.title}
+        pagepath={location.pathname}
+      />
+
       <FixedHeader />
 
       <BlogHero
