@@ -9,7 +9,8 @@ module.exports = {
     title: `Gatsby & microCMS Site`,
     description: `GatsbyとmicroCMSで作成したサンプルサイトです`,
     lang: `ja`,
-    siteUrl: `https://toriwatari.worksample`
+    siteUrl: `https://toriwatari.worksample`,
+    locale: `ja_JP`
     //siteUrl: ``,
   },
   plugins: [
