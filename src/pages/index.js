@@ -2,6 +2,7 @@ import React from "react"
 
 import { StaticImage } from "gatsby-plugin-image"
 
+import Seo from "../components/seo"
 import FixedHeader from "../components/fixedHeader"
 import BlogList from "../components/blogList"
 
@@ -10,6 +11,8 @@ import "../scss/style.scss"
 const IndexPage = () => {
   return (
     <>
+      <Seo />
+
       <FixedHeader />
 
       <StaticImage
