@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import FixedHeader from "../components/fixedHeader"
 import BlogList from "../components/blogList"
+import Footer from "../components/footer"
 
 import "../scss/style.scss"
 
@@ -23,6 +24,8 @@ const IndexPage = () => {
       />
 
       <BlogList />
+
+      <Footer />
     </>
   )
 }
