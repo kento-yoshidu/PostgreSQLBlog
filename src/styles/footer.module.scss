@@ -1,0 +1,36 @@
+@import "../scss/variables.scss";
+
+.footer {
+	height: 50vh;
+	background-color: darken($main-color, 15%);
+	color: #ccc;
+	.wrapper {
+		width: 80%;
+		margin: 0 auto;
+		padding: 50px 0;
+
+		.footerTitle {
+			margin-bottom: 30px;
+			font-size: 2rem;
+			font-weight: 500;
+			letter-spacing: 2px;
+		}
+		p {
+			margin-bottom: 30px;
+			font-size: 1.5rem;
+		}
+		ul {
+			list-style: none;
+			li {
+				margin-bottom: 10px;
+				a {
+					color: #ccc;
+					font-size: 1.1rem;
+					&:hover {
+						color: #eee;
+					}
+				}
+			}
+		}
+	}
+}
