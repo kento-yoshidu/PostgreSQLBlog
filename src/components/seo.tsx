@@ -4,7 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 type Props = {
   pageTitle?: string,
-  pagepath?: string
+  pagepath?: string,
+  pagedesc?: string
 }
 
 const Seo: React.VFC<Props> = (props) => {
@@ -21,8 +22,8 @@ const Seo: React.VFC<Props> = (props) => {
     }`
   )
 
-  const title = props.pagetitle
-    ? `${props.pagetitle} | ${data.site.siteMetadata.title}`
+  const title = props.pageTitle
+    ? `${props.pageTitle} | ${data.site.siteMetadata.title}`
     : data.site.siteMetadata.title
 
   const description = props.pagedesc || data.site.siteMetadata.description 

@@ -1,10 +1,10 @@
-import React from "react"
+import * as React from "react"
 
 import { Link } from "gatsby"
 
-import * as Styles from "../styles/fixedHeader.module.scss"
+const Styles = require("../styles/fixedHeader.module.scss")
 
-const FixedHeader = () => {
+const FixedHeader: React.VFC = () => {
 	return (
 		<header className={Styles.fixedHeader}>
 			<h1>
