@@ -5,13 +5,32 @@ import Seo from "../../components/seo"
 import FixedHeader from "../../components/fixedHeader"
 import BlogHero from "../../components/blogHero"
 
-import * as Styles from "../../styles/blogPost.module.scss"
+const Styles = require("../../styles/blogPost.module.scss")
 
-const BlogPage = ({ data, location }) => {
+type Data = {
+  microcmsBlog: {
+    title: string,
+    body: string,
+    image: {
+      url: string,
+    }
+  }
+}
+
+type Location = {
+  pathname: string
+}
+
+type Props = {
+  data: Data,
+  location: Location
+}
+
+const BlogPage: React.VFC<Props> = ({ data, location }) => {
   return (
     <>
       <Seo
-        pagetitle={data.microcmsBlog.title}
+        pageTitle={data.microcmsBlog.title}
         pagepath={location.pathname}
       />
 
