@@ -1,0 +1,26 @@
+@import "../scss/variables";
+
+.fixedHeader {
+	position: fixed;
+	top: 0;
+	height: 8vh;
+	z-index: 1;
+	background-color: #fafafa;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 1px 11px 2px #eee;
+	h1 {
+		a {
+			color: #666;
+			font-size: 1.8rem;
+			letter-spacing: 1.5px;
+			text-decoration: none;
+			transition: .2s;
+			&:hover {
+				color: $main-color;
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+import React from "react"
+import { Link } from "gatsby"
+
+import * as Styles from "../styles/footer.module.scss"
+
+const Footer = () => (
+	<footer className={Styles.footer}>
+		<div className={Styles.wrapper}>
+			<h1 className={Styles.footerTitle}>
+				Gatsby & microCMS Site
+			</h1>
+			<p>他のJamstackサイトを見る</p>
+
+			<ul>
+				<li>
+					<Link to="https://blog.toriwatari.work/page/1/">
+						鳥に生まれることができなかった人へ
+					</Link>
+				</li>
+				<li>
+					<Link to="https://cssanimation.toriwatari.work/">
+						CSS Animation & Tips
+					</Link>
+				</li>
+				<li>
+					<Link to="https://nuxtdentalclinic.netlify.app/">
+						Nuxt Dental Clinic
+					</Link>
+				</li>
+				<li>
+					<Link to="https://gatsbycafesite.netlify.app/">
+						Gatsby Cafe Site
+					</Link>
+				</li>
+			</ul>
+		</div>
+
+	</footer>
+)
+
+export default Footer
