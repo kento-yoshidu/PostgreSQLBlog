@@ -1,9 +1,9 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 
-import * as Styles from "../styles/footer.module.scss"
+const Styles = require("../styles/footer.module.scss")
 
-const Footer = () => (
+const Footer: React.VFC = () => (
 	<footer className={Styles.footer}>
 		<div className={Styles.wrapper}>
 			<h1 className={Styles.footerTitle}>
