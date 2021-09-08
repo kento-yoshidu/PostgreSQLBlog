@@ -1,10 +1,12 @@
 import React from "react"
 
-import { /*GatsbyImage StaticImage*/ } from "gatsby-plugin-image"
+const Styles = require("../styles/blogHero.module.scss")
 
-import * as Styles from "../styles/blogHero.module.scss"
+type Props = {
+	url: string
+}
 
-const BlogHero = ({url}) => {
+const BlogHero: React.VFC<Props> = ({url}) => {
 	return (
 		<header className={Styles.blogHero}>
 			<img	
