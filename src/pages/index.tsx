@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -9,7 +9,7 @@ import Footer from "../components/footer"
 
 import "../scss/style.scss"
 
-const IndexPage = () => {
+const IndexPage: React.VFC = () => {
   return (
     <>
       <Seo />

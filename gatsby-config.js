@@ -53,7 +53,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-typegen`
     `gatsby-plugin-sass`
   ],
 }
