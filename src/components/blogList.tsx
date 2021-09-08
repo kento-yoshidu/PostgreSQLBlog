@@ -1,16 +1,16 @@
-import React from "react"
+import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import * as Styles from "../styles/blogList.module.scss"
+const Styles = require("../styles/blogList.module.scss")
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faUndo ,faFolder, faTags } from "@fortawesome/free-solid-svg-icons"
+import { faUndo } from "@fortawesome/free-solid-svg-icons"
 
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const BlogList = () =>{ 
+const BlogList: React.VFC = () =>{ 
 
 	const { allMicrocmsBlog } = useStaticQuery(
 		graphql`
@@ -34,8 +34,8 @@ const BlogList = () =>{
 	)
 
 	return (
-		<section class={Styles.section}>
-			<h2 class="sectionTItle">ブログ</h2>
+		<section className={Styles.section}>
+			<h2 className="sectionTItle">ブログ</h2>
 			<ul className={Styles.blogList}>
 				{allMicrocmsBlog.edges.map(({node}) => (
 					<li
