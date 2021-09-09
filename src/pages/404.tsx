@@ -2,10 +2,16 @@ import * as React from "react"
 
 import Seo from "../components/seo"
 
-const NotFoundPage = ({location }) => (
+type Props = {
+  location: {
+    pathname: string
+  }
+}
+
+const NotFoundPage: React.VFC<Props> = ({ location }) => (
   <>
     <Seo
-      title="ページが見つかりません"
+      pageTitle="ページが見つかりません"
       pagepath={location.pathname}
     />
 

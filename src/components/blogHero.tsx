@@ -3,7 +3,7 @@ import React from "react"
 const Styles = require("../styles/blogHero.module.scss")
 
 type Props = {
-	url: string
+	url: any
 }
 
 const BlogHero: React.VFC<Props> = ({url}) => {
