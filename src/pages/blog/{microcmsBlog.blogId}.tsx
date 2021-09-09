@@ -7,42 +7,30 @@ import BlogHero from "../../components/blogHero"
 
 const Styles = require("../../styles/blogPost.module.scss")
 
-type Data = {
-  microcmsBlog: {
-    title: string,
-    body: string,
-    image: {
-      url: string,
-    }
-  }
-}
-
-type Location = {
-  pathname: string
-}
-
 type Props = {
-  data: Data,
-  location: Location
+  data: GatsbyTypes.BlogPageQuery,
+  location: {
+    pathname: string
+  }
 }
 
 const BlogPage: React.VFC<Props> = ({ data, location }) => {
   return (
     <>
       <Seo
-        pageTitle={data.microcmsBlog.title}
+        pageTitle={data.microcmsBlog?.title}
         pagepath={location.pathname}
       />
 
       <FixedHeader />
 
       <BlogHero
-        url={data.microcmsBlog.image.url}
+        url={data.microcmsBlog?.image?.url}
       />
 
       <main
         dangerouslySetInnerHTML={{
-          __html: `${data.microcmsBlog.body}`,
+          __html: `${data.microcmsBlog?.body}`,
         }}
         className={Styles.blogPost}
       />
@@ -55,7 +43,7 @@ const BlogPage: React.VFC<Props> = ({ data, location }) => {
 export default BlogPage
 
 export const query = graphql`
-  query($id: String!) {
+  query BlogPage($id: String!) {
     microcmsBlog(id: { eq: $id }) {
       blogId
       title
