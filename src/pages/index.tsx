@@ -21,11 +21,16 @@ const IndexPage: React.VFC = () => {
         alt="珈琲の画像"
         placeholder="blurred"
         className="img"
+        objectPosition={0}
       />
 
-      <BlogList />
+      <main>
 
-      <Footer />
+        <BlogList />
+
+        <Footer />
+      </main>
+
     </>
   )
 }

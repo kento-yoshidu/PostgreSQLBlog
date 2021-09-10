@@ -1,5 +1,11 @@
 .img {
-	height: 30vh;
-	background-position: center;
-	background-size: cover;
+	height: 60vh;
+	width:100%;
+	position: sticky;
+  top: 0;
+}
+
+main {
+	position: relative;
+	background-color: #fff;
 }
