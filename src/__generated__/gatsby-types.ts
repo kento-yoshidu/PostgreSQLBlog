@@ -3193,10 +3193,10 @@ type Unnamed_1_Query = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArr
         & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
       ) }> } };
 
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_2_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl'>> }> };
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
