@@ -1,11 +1,11 @@
-import React from "react"
+import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-const InfoList = () => {
+const InfoList: React.VFC = () => {
 
-	const { edges } = useStaticQuery<GatsbyTypes.MyQueryQuery>(
+	const { allMicrocmsNews } = useStaticQuery<GatsbyTypes.InfoListQuery>(
 		graphql`
-			query MyQuery {
+			query InfoList{
 				allMicrocmsNews {
 					edges {
 						node {
@@ -20,7 +20,7 @@ const InfoList = () => {
 		`
 	)
 
-	console.log(edges)
+	console.log(allMicrocmsNews)
 
 	return (
 		<p>hoge</p>
