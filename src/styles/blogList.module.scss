@@ -3,6 +3,7 @@
 .section {
 	width: 80vw;
 	margin: 0 auto;
+	padding: 50px 0;
 
 	h2 {
 		margin-bottom: 50px;
@@ -11,10 +12,10 @@
 	.blogList {
 		list-style: none;
 		display: flex;
-		justify-content: space-between;
 		flex-wrap: wrap;
 
 		.listItem {
+			margin-right: 80px;
 			margin-bottom: 50px;
 			padding: 10px 10px;
 			width: 30%;

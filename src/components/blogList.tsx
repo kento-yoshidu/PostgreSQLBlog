@@ -12,9 +12,9 @@ config.autoAddCss = false
 
 const BlogList: React.VFC = () =>{ 
 
-	const { allMicrocmsBlog } = useStaticQuery(
+	const { allMicrocmsBlog } = useStaticQuery<GatsbyTypes.BlogListQuery>(
 		graphql`
-			query {
+			query BlogList {
 				allMicrocmsBlog {
 					edges {
 						node {

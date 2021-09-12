@@ -50,6 +50,9 @@ module.exports = {
           {
             endpoint: "blog",
           },
+          {
+            endpoint: "news"
+          },
         ],
       },
     },
