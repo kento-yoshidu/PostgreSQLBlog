@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Seo from "../components/seo"
 import FixedHeader from "../components/fixedHeader"
+import InfoList from "../components/infoList"
 import BlogList from "../components/blogList"
 import Footer from "../components/footer"
 
@@ -25,6 +26,8 @@ const IndexPage: React.VFC = () => {
       />
 
       <main>
+
+        <InfoList />
 
         <BlogList />
 
