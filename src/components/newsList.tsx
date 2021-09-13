@@ -17,7 +17,7 @@ const NewsList: React.VFC = () => {
 				edges {
 					node {
 						id
-						createdAt(formatString: "YYYY.MM.DD")
+						createdAt(formatString: "YYYY.MM.DD HH:mm")
 						title
 						body
 						newsId
