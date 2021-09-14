@@ -1,0 +1,32 @@
+.button {
+	position: relative;
+	bottom: 100px;
+	font-size: 1.5rem;
+	display:inline-block;
+	width: 100px;
+	padding:10px 30px 10px 20px;
+	text-align:center;
+	color:#222;
+	margin:5px;
+	cursor:pointer;
+	text-decoration: none;
+
+	&::after {
+		content: "";
+    display: block;
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 0;
+    width: 40px;
+    height: 10px;
+    border: none;
+    border-right: 2px solid #222;
+    border-bottom: 1px solid #222;
+    transform: skew(45deg);
+    transition: .3s;
+	}
+	&:hover::after {
+		right: -40px;
+    width: 70px;
+	}
+}

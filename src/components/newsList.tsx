@@ -1,6 +1,8 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
+import Button from "../components/button"
+
 const Styles = require("../styles/newsList.module.scss")
 
 const NewsList: React.VFC = () => {
@@ -37,6 +39,10 @@ const NewsList: React.VFC = () => {
 					</li>
 				))}
 			</ul>
+
+			<Button
+				link="/"
+			/>
 		</section>
 	)
 }
