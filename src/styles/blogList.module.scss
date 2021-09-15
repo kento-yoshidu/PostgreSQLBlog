@@ -1,48 +1,53 @@
 @import "../scss/variables";
 
 .section {
-	width: 70vw;
+	position: relative;
+	width: 100%;
 	margin: 0 auto;
-	padding: 50px 0;
+	padding: 50px 0 80px;
 
-	h2 {
-		margin-bottom: 50px;
-		font-size: 2rem;
-	}
-	.blogList {
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
-
-		.listItem {
-			margin-right: 80px;
+	.wrapper {
+		width: 70%;
+		margin: 0 auto;
+		h2 {
 			margin-bottom: 50px;
-			padding: 10px 10px;
-			width: 30%;
-			a {
-				display: block;
-				margin-bottom: 20px;
-				color: #444;
-				font-size: 1.3rem;
-				font-weight: 500;
-				transition: .2s;
-				line-height: 1.5;
-				&:hover {
-					color: $main-color;
-				}
-			}
-			.imgWrapper {
-				height: 250px;
-				img {
-					width: 100%;
-					margin-bottom: 30px;
+			font-size: 2rem;
+		}
+		.blogList {
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+
+			.listItem {
+				margin-right: 80px;
+				margin-bottom: 50px;
+				padding: 10px 10px;
+				width: 30%;
+				a {
 					display: block;
+					margin-bottom: 20px;
+					color: #444;
+					font-size: 1.3rem;
+					font-weight: 500;
+					transition: .2s;
+					line-height: 1.5;
+					&:hover {
+						color: $main-color;
+					}
 				}
-			}
-			.timeWrapper {
-				margin-bottom: 20px;
-				time {
-					font-size: 1rem;
+				.imgWrapper {
+					height: 250px;
+					img {
+						width: 100%;
+						margin-bottom: 30px;
+						display: block;
+					}
+				}
+				.timeWrapper {
+					margin-bottom: 20px;
+					time {
+						font-size: 1rem;
+					}
 				}
 			}
 		}

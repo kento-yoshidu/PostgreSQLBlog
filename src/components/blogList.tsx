@@ -1,6 +1,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
+import Button from "../components/button"
+
 const Styles = require("../styles/blogList.module.scss")
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,31 +37,37 @@ const BlogList: React.VFC = () =>{
 
 	return (
 		<section className={Styles.section}>
-			<h2 className="sectionTItle">ブログ</h2>
-			<ul className={Styles.blogList}>
-				{allMicrocmsBlog.edges.map(({node}) => (
-					<li
-						key={node.blogId}
-						className={Styles.listItem}
-					>
-						<div className={Styles.imgWrapper}>
-							<img
-								src={node.image.url}
-							/>
-						</div>
-						<div className={Styles.timeWrapper}>
-							<time>
-								<FontAwesomeIcon icon={faUndo} /> {node.date}
-							</time>
-						</div>
-						<Link
-							to={`/blog/${node.blogId}/`}
+			<div className={Styles.wrapper}>
+				<h2 className="sectionTitle">ブログ</h2>
+				<ul className={Styles.blogList}>
+					{allMicrocmsBlog.edges.map(({node}) => (
+						<li
+							key={node.blogId}
+							className={Styles.listItem}
 						>
-							{node.title}
-						</Link>
-					</li>
-				))}
-			</ul>
+							<div className={Styles.imgWrapper}>
+								<img
+									src={node.image.url}
+								/>
+							</div>
+							<div className={Styles.timeWrapper}>
+								<time>
+									<FontAwesomeIcon icon={faUndo} /> {node.date}
+								</time>
+							</div>
+							<Link
+								to={`/blog/${node.blogId}/`}
+							>
+								{node.title}
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<Button
+				link="/"
+			/>
 		</section>
 	)
 }
