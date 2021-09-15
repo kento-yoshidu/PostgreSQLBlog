@@ -3442,19 +3442,6 @@ type BlogPageQuery = { readonly microcmsBlog: Maybe<(
     & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
   )> };
 
-type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
-        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-      ) }> } };
-
-type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3485,6 +3472,19 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
+        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+      ) }> } };
+
+type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
