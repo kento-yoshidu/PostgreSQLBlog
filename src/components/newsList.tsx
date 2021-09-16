@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Button from "../components/button"
 
@@ -35,13 +35,14 @@ const NewsList: React.VFC = () => {
 			<ul className="newsList">
 				{allMicrocmsNews.edges.map(({node}) => (
 					<li key={node.id}>
-						<time>{node.createdAt}</time><a href="#">{node.title}</a>
+						<time>{node.createdAt}</time>
+						<Link to={`/news#${node.id}`}>{node.title}</Link>
 					</li>
 				))}
 			</ul>
 
 			<Button
-				link="/"
+				link="/news/"
 			/>
 		</section>
 	)
