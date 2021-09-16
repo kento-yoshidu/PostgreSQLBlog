@@ -47,7 +47,7 @@ const BlogList: React.VFC = () =>{
 						>
 							<div className={Styles.imgWrapper}>
 								<img
-									src={node.image.url}
+									src={node.image?.url}
 								/>
 							</div>
 							<div className={Styles.timeWrapper}>
