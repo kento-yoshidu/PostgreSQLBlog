@@ -1,0 +1,40 @@
+.main {
+	padding: 50px 0;
+
+	.newsList {
+		width: 50%;
+		margin: 0 auto;
+
+		.newsListItem {
+			margin-bottom: 20vh;
+			list-style: none;
+			font-size: 2rem;
+
+			h2 {
+				margin-bottom: 20px;
+				font-size: 1.8rem;
+				font-weight: 500;
+			}
+			time {
+				display: block;
+				margin-bottom: 40px;
+				font-size: 1.1rem;
+				font-weight: 500;
+			}
+			p {
+				font-size: 1.1rem;
+				text-indent: .8rem;
+				line-height: 1.5;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.main {
+		.newsList {
+			width: 95%;
+		}
+	}	
+}
