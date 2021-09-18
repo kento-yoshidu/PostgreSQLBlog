@@ -674,10 +674,10 @@ type MicrocmsNews = Node & {
   readonly publishedAt: Maybe<Scalars['Date']>;
   readonly revisedAt: Maybe<Scalars['Date']>;
   readonly title: Maybe<Scalars['String']>;
+  readonly body: Maybe<Scalars['String']>;
   readonly flag: Maybe<Scalars['Boolean']>;
   readonly sortIndex: Maybe<Scalars['Int']>;
   readonly newsId: Maybe<Scalars['String']>;
-  readonly body: Maybe<Scalars['String']>;
 };
 
 
@@ -1058,10 +1058,10 @@ type Query_microcmsNewsArgs = {
   publishedAt: Maybe<DateQueryOperatorInput>;
   revisedAt: Maybe<DateQueryOperatorInput>;
   title: Maybe<StringQueryOperatorInput>;
+  body: Maybe<StringQueryOperatorInput>;
   flag: Maybe<BooleanQueryOperatorInput>;
   sortIndex: Maybe<IntQueryOperatorInput>;
   newsId: Maybe<StringQueryOperatorInput>;
-  body: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -3211,10 +3211,10 @@ type MicrocmsNewsFieldsEnum =
   | 'publishedAt'
   | 'revisedAt'
   | 'title'
+  | 'body'
   | 'flag'
   | 'sortIndex'
-  | 'newsId'
-  | 'body';
+  | 'newsId';
 
 type MicrocmsNewsGroupConnection = {
   readonly totalCount: Scalars['Int'];
@@ -3235,10 +3235,10 @@ type MicrocmsNewsFilterInput = {
   readonly publishedAt: Maybe<DateQueryOperatorInput>;
   readonly revisedAt: Maybe<DateQueryOperatorInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
+  readonly body: Maybe<StringQueryOperatorInput>;
   readonly flag: Maybe<BooleanQueryOperatorInput>;
   readonly sortIndex: Maybe<IntQueryOperatorInput>;
   readonly newsId: Maybe<StringQueryOperatorInput>;
-  readonly body: Maybe<StringQueryOperatorInput>;
 };
 
 type MicrocmsNewsSortInput = {
@@ -3432,15 +3432,23 @@ type MicrocmsBlogSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
+
 type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
 
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
+type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
+        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+      ) }> } };
 
 type BlogPageQueryVariables = Exact<{
   id: Scalars['String'];
@@ -3478,22 +3486,14 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
-        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-      ) }> } };
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type CurrentNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type CurrentNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 }

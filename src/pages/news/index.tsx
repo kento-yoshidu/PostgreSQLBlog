@@ -6,6 +6,8 @@ import Seo from "../../components/seo"
 import FixedHeader from "../../components/fixedHeader"
 import Footer from "../../components/footer"
 
+import * as Styles from "../../styles/news.module.scss"
+
 type Props = {
 	data: GatsbyTypes.NewsListQuery
 }
@@ -20,22 +22,20 @@ const News: React.VFC<Props> = ({data}) => {
 			<FixedHeader />
 
 			<StaticImage
-				src="../images/topimage.jpg"
+				src="../../images/news.jpg"
 				alt="珈琲の画像"
 				placeholder="blurred"
 				className="img"
 				objectPosition={0}
 			/>
 
-
-			<main>
-				<ul className="newsList">
+			<main className={Styles.main}>
+				<ul className={Styles.newsList}>
 					{data.allMicrocmsNews.edges.map(({node}) => (
 						<li
-							className="newListItem"
+							className={Styles.newsListItem}
 							key={node.id}
 							id={node.id}
-							style={{height: "100vh"}}
 						>
 							<h2>
 								{node.title}
@@ -43,9 +43,11 @@ const News: React.VFC<Props> = ({data}) => {
 							<time>
 								{node.createdAt}
 							</time>
-							<p>
-								{node.body}
-							</p>
+							<div
+								dangerouslySetInnerHTML={{
+									__html: `${node.body}`
+								}}
+							/>
 						</li>
 					))}
 				</ul>
