@@ -3432,13 +3432,15 @@ type MicrocmsBlogSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
+type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
-        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-      ) }> } };
+type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
 
 type BlogPageQueryVariables = Exact<{
   id: Scalars['String'];
@@ -3476,15 +3478,13 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
-
-type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
+        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+      ) }> } };
 
 type CurrentNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
