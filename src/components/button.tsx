@@ -5,14 +5,15 @@ const Styles = require("../styles/button.module.scss")
 
 type Props = {
 	link: string
+	text: string
 }
 
-const Button = ({link}) => (
+const Button: React.VFC<Props> = ({link, text}) => (
 	<Link
 		to={link}
 		className={Styles.button}
 	>
-		<span>more</span>
+		<span>{text}</span>
 	</Link>
 )
 

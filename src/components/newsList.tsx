@@ -15,6 +15,10 @@ const NewsList: React.VFC = () => {
 					filter: {
 						flag: {eq: true}
 					}
+					sort: {
+						fields: createdAt,
+						order: DESC
+					}
 				) {
 				edges {
 					node {
@@ -43,6 +47,7 @@ const NewsList: React.VFC = () => {
 
 			<Button
 				link="/news/"
+				text="more"
 			/>
 		</section>
 	)
