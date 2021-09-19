@@ -3432,6 +3432,14 @@ type MicrocmsBlogSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
+        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+      ) }> } };
+
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3441,14 +3449,6 @@ type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
-type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
-        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-      ) }> } };
 
 type BlogPageQueryVariables = Exact<{
   id: Scalars['String'];
@@ -3490,6 +3490,11 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type OldNewsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type OldNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
 
 type CurrentNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 

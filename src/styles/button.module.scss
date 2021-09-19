@@ -1,10 +1,9 @@
 .button {
 	position: absolute;
 	bottom: 3%;
-	right: 20%;
-	font-size: 1.5rem;
+	right: 10%;
+	font-size: 1.3rem;
 	display:inline-block;
-	width: 100px;
 	padding:10px 30px 10px 20px;
 	text-align:center;
 	color:#666;
@@ -17,7 +16,7 @@
     display: block;
     position: absolute;
     top: calc(50% - 5px);
-    right: 0;
+    left: 90%;
     width: 40px;
     height: 10px;
     border: none;
@@ -31,7 +30,7 @@
 	}
 	&:hover::after {
 		right: -60px;
-    width: 90px;
+    width: 60px;
 		border-color: #222;
 	}
 }

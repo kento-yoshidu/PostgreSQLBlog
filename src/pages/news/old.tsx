@@ -10,14 +10,14 @@ import Footer from "../../components/footer"
 import * as Styles from "../../styles/news.module.scss"
 
 type Props = {
-	data: GatsbyTypes.NewsListQuery
+	data: GatsbyTypes.OldNewsListQuery
 }
 
-const News: React.VFC<Props> = ({data}) => {
+const OldNews: React.VFC<Props> = ({data}) => {
 	return (
 		<>
 			<Seo
-				pageTitle="最新のお知らせ一覧"
+				pageTitle="過去のお知らせ一覧"
 			/>
 
 			<FixedHeader />
@@ -53,8 +53,8 @@ const News: React.VFC<Props> = ({data}) => {
 					))}
 
 					<Button
-						link="/news/old/"
-						text="過去のお知らせを見る"
+						link="/news/"
+						text="最新のお知らせを見る"
 					/>
 				</ul>
 
@@ -64,13 +64,13 @@ const News: React.VFC<Props> = ({data}) => {
 	)
 }
 
-export default News
+export default OldNews
 
 export const CurrentNewsList = graphql`
-		query CurrentNewsList {
+		query OldNewsList {
 			allMicrocmsNews(
 				filter: {
-					flag: {eq: true}
+					flag: {eq: false}
 				}
 				sort: {
 					fields: createdAt,
