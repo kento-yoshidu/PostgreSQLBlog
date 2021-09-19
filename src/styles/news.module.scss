@@ -1,12 +1,13 @@
 .main {
-	padding: 50px 0;
-
 	.newsList {
 		width: 50%;
 		margin: 0 auto;
+		padding: 100px 0;	
+		position: relative;
 
 		.newsListItem {
-			margin-bottom: 20vh;
+			padding-top: 10vh;
+			margin-bottom: 10vh;
 			list-style: none;
 			font-size: 2rem;
 

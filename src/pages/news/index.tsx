@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Seo from "../../components/seo"
 import FixedHeader from "../../components/fixedHeader"
+import Button from "../../components/button"
 import Footer from "../../components/footer"
 
 import * as Styles from "../../styles/news.module.scss"
@@ -50,6 +51,11 @@ const News: React.VFC<Props> = ({data}) => {
 							/>
 						</li>
 					))}
+
+					<Button
+						link="/news/old/"
+						text="過去のお知らせを見る"
+					/>
 				</ul>
 
 				<Footer />
@@ -65,6 +71,10 @@ export const CurrentNewsList = graphql`
 			allMicrocmsNews(
 				filter: {
 					flag: {eq: true}
+				}
+				sort: {
+					fields: createdAt,
+					order: DESC
 				}
 			) {
 				edges {
