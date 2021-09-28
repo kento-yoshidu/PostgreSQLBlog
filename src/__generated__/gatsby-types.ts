@@ -3440,15 +3440,15 @@ type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray
         & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
       ) }> } };
 
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
-
 type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
 
 type BlogPageQueryVariables = Exact<{
   id: Scalars['String'];
