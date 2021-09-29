@@ -3432,14 +3432,6 @@ type MicrocmsBlogSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
-        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-      ) }> } };
-
 type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3449,6 +3441,14 @@ type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
+
+type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MicrocmsBlog, 'title' | 'blogId' | 'body' | 'update' | 'date'>
+        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+      ) }> } };
 
 type BlogPageQueryVariables = Exact<{
   id: Scalars['String'];
