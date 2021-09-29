@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Switch } from "@headlessui/react"
 
 const Styles = require("./UIButton.module.scss")
@@ -11,15 +11,16 @@ const UIButton = () => {
 			<Switch
 				checked={enabled}
 				onChange={setEnabled}
-				className={` ${Styles.test} ${
-					enabled ? 'bg-blue-600' : 'bg-gray-200'
-				} relative inline-flex items-center h-6 rounded-full w-11`}
+				className={`
+					${Styles.toggleButton}
+					${enabled ? `${Styles.on}` : `${Styles.off}`}
+				`}
 			>
-				<span className="sr-only">Enable notifications</span>
 				<span
-					className={`${
-						enabled ? 'translate-x-6' : 'translate-x-1'
-					} inline-block w-4 h-4 transform bg-white rounded-full`}
+					className={`
+						${Styles.toggleBall} 
+						${enabled ? `${Styles.on}` : `${Styles.off}`}
+					`}
 				/>
 			</Switch>
 		</>
