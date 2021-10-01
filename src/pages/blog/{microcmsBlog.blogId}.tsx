@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Seo from "../../components/seo"
-import FixedHeader from "../../components/fixedHeader"
+import Layout from "../../components/layout"
 import BlogHero from "../../components/blogHero"
+import Button from "../../components/button"
+import Footer from "../../components/footer"
 
 const Styles = require("../../styles/blogPost.module.scss")
 
@@ -16,13 +17,10 @@ type Props = {
 
 const BlogPage: React.VFC<Props> = ({ data, location }) => {
   return (
-    <>
-      <Seo
-        pageTitle={data.microcmsBlog?.title}
-        pagepath={location.pathname}
-      />
-
-      <FixedHeader />
+    <Layout
+      pageTitle={data.microcmsBlog?.title}
+      pagepath={location.pathname}
+    >
 
       <BlogHero
         url={data.microcmsBlog?.image?.url}
@@ -35,10 +33,16 @@ const BlogPage: React.VFC<Props> = ({ data, location }) => {
         className={Styles.blogPost}
       />
 
-    </>
+      <Button
+        link="/"
+        text="HOMR"
+      />
+
+      <Footer />
+
+    </Layout>
   )
 }
-
 
 export default BlogPage
 
