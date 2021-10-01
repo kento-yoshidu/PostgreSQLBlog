@@ -2,22 +2,18 @@ import React, { useState, useEffect } from 'react'
 
 import { StaticImage } from "gatsby-plugin-image"
 
-import Seo from "../components/seo"
+import Layout from "../components/layout"
 import FixedHeader from "../components/fixedHeader"
 import NewsList from "../components/newsList"
 import BlogList from "../components/blogList"
 import Footer from "../components/footer"
-
 import Switch from "../UI/UIButton"
-
 
 import "../scss/style.scss"
 
 const IndexPage: React.VFC = () => {
   return (
-    <>
-      <Seo />
-
+    <Layout>
       <FixedHeader />
 
       <StaticImage
@@ -38,9 +34,10 @@ const IndexPage: React.VFC = () => {
         <Switch />
 
         <Footer />
+
       </main>
 
-    </>
+    </Layout>
   )
 }
 
