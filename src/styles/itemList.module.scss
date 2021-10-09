@@ -1,0 +1,56 @@
+@import "../scss/variables";
+
+.section {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	padding: 50px 0 80px;
+
+	.wrapper {
+		width: 70%;
+		margin: 0 auto;
+		.sectionTitle {
+			margin-bottom: 50px;
+			font-size: 2rem;
+		}
+	}
+
+	.tab {
+		padding: 10px 15px;
+		font-size: 1.5rem;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-radius: 5px 5px 0 0;
+	}
+	.selected {
+		background-color: red;
+	}
+
+	/* リセット用 */
+	button {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background: transparent;
+		border: none;
+		border-radius: 0;
+		font: inherit;
+		outline: none;
+	}
+
+	/*
+textarea {
+  resize: vertical;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+*/
+
+button {
+  cursor: pointer;
+}
+}
