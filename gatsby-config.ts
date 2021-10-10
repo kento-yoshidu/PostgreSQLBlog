@@ -41,6 +41,9 @@ const plugins: GatsbyConfig['plugins'] = [
 				{
 					endpoint: "news"
 				},
+				{
+					endpoint: "item"
+				},
 			],
 		},
 	},
