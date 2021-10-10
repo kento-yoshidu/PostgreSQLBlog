@@ -16,19 +16,32 @@
 	}
 
 	.tabList {
-		border: 1px solid red;
 		display: flex;
 		justify-content: center;
 		.tab {
+			width: 49%;
 			flex-grow: 1;
 			padding: 10px 15px;
 			font-size: 1.5rem;
-			border-top: 1px solid #ccc;
-			border-left: 1px solid #ccc;
-			border-right: 1px solid #ccc;
-			border-radius: 5px 5px 0 0;
-			.selected {
-				background-color: red;
+			border-radius: 3px 3px 0 0;
+			background-color: #ddd;
+			transition: 0.3s;
+		}
+		.tab.selected {
+			background-color: lightblue;
+		}
+	}
+
+	.body {
+		border: 1px solid #eee;
+		padding: 30px 50px;
+		.itemList {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			.item {
+				width: 30%;
+				border: 1px solid red;
 			}
 		}
 	}
