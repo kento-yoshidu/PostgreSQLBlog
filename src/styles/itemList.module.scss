@@ -38,10 +38,17 @@
 		.itemList {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
 			.item {
-				width: 30%;
-				border: 1px solid red;
+				margin-right: 20px;
+				width: 25%;
+				padding: 20px;
+				border: 2px solid #bbb;
+				.imgWrapper {
+					width: 100%;
+					img {
+						width: 100%;
+					}
+				}
 			}
 		}
 	}

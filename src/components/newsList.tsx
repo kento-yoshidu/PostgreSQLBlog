@@ -20,16 +20,16 @@ const NewsList: React.VFC = () => {
 						order: DESC
 					}
 				) {
-				edges {
-					node {
-						id
-						createdAt(formatString: "YYYY.MM.DD HH:mm")
-						title
-						body
-						newsId
+					edges {
+						node {
+							id
+							createdAt(formatString: "YYYY.MM.DD HH:mm")
+							title
+							body
+							newsId
+						}
 					}
 				}
-			}
 			}
 		`
 	)
