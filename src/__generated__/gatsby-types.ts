@@ -3440,6 +3440,26 @@ type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray
         & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
       ) }> } };
 
+type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+
+type BlogPageQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+type BlogPageQuery = { readonly microcmsBlog: Maybe<(
+    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
+    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+  )> };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
+
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -3465,26 +3485,6 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
-type BlogPageQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-type BlogPageQuery = { readonly microcmsBlog: Maybe<(
-    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
-    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-  )> };
-
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

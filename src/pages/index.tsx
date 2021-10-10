@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React/*, { useState, useEffect }*/ from 'react'
 
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -6,8 +6,9 @@ import Layout from "../components/layout"
 import FixedHeader from "../components/fixedHeader"
 import NewsList from "../components/newsList"
 import BlogList from "../components/blogList"
+import ItemList from "../components/itemList"
 import Footer from "../components/footer"
-import Switch from "../UI/UIButton"
+//import Switch from "../UI/UIButton"
 
 import "../scss/style.scss"
 
@@ -30,9 +31,8 @@ const IndexPage: React.VFC = () => {
 
         <BlogList />
 
-
-        <Switch />
-
+        <ItemList />
+        {/*<Switch />*/}
         <Footer />
 
       </main>
