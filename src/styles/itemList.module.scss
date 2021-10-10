@@ -15,19 +15,25 @@
 		}
 	}
 
-	.tab {
-		padding: 10px 15px;
-		font-size: 1.5rem;
-		border-top: 1px solid #ccc;
-		border-left: 1px solid #ccc;
-		border-right: 1px solid #ccc;
-		border-radius: 5px 5px 0 0;
-	}
-	.selected {
-		background-color: red;
+	.tabList {
+		border: 1px solid red;
+		display: flex;
+		justify-content: center;
+		.tab {
+			flex-grow: 1;
+			padding: 10px 15px;
+			font-size: 1.5rem;
+			border-top: 1px solid #ccc;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+			border-radius: 5px 5px 0 0;
+			.selected {
+				background-color: red;
+			}
+		}
 	}
 
-	/* リセット用 */
+	/* リセットCSS */
 	button {
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -37,20 +43,6 @@
 		border-radius: 0;
 		font: inherit;
 		outline: none;
+		cursor: pointer;
 	}
-
-	/*
-textarea {
-  resize: vertical;
-}
-
-input[type='checkbox'],
-input[type='radio'] {
-  display: none;
-}
-*/
-
-button {
-  cursor: pointer;
-}
 }
