@@ -1,11 +1,20 @@
-import React, { useState } from "react"
+import React from "react"
 import { Tab } from '@headlessui/react'
+import { StaticImage } from "gatsby-plugin-image"
 
 const Styles = require("../styles/itemList.module.scss")
 
 const ItemList: React.VFC = () => {
-  //const [checked, setChecked] = useState(false)
 
+  interface Categories {
+    id: number,
+    name: string
+  }
+  const categories: Categories = [
+    { id: 1, name: "珈琲・紅茶"},
+    { id: 2, name: "デザート"},
+  ]
+  
   return (
     <>
       <section className={Styles.section}>
@@ -14,22 +23,37 @@ const ItemList: React.VFC = () => {
 
           <Tab.Group>
             <Tab.List className={Styles.tabList}>
-              <Tab
-                className={({selected}) => 
-                  selected ? `${Styles.tab} ${Styles.selected}` : `${Styles.tab}`}
-                >
-                ge
-              </Tab>
-
-              <Tab className={Styles.tab}>
-                スイーツ
-              </Tab>
+              {categories.map((category) => (
+                <Tab
+                  className={({selected}) => 
+                    selected ? `${Styles.tab} ${Styles.selected}` : `${Styles.tab}`}
+                  key={category.id}
+                  >
+                  {category.name}
+                </Tab>
+              ))}
             </Tab.List>
 
-            <Tab.Panels>
-              <Tab.Panel>Content 1</Tab.Panel>
-              <Tab.Panel>Content 2</Tab.Panel>
-              <Tab.Panel>Content 3</Tab.Panel>
+            <Tab.Panels className={Styles.body}>
+              <Tab.Panel className={Styles.itemList}>
+                <div className={Styles.item}>
+                  <StaticImage
+                    src="../images/news.jpg"
+                    alt="hogehoge"
+                    className={Styles.itemImage}
+                  />
+                </div>
+                <p className={Styles.item}>gaijpgaj@</p>
+                <p className={Styles.item}>gaijpgaj@</p>
+                <p className={Styles.item}>gaijpgaj@</p>
+                <p className={Styles.item}>gaijpgaj@</p>
+              </Tab.Panel>
+              <Tab.Panel className={Styles.itemList}>
+                <p className={Styles.item}>ほｇｗｊｇぱ</p>
+                <p className={Styles.item}>ほｇｗｊｇぱ</p>
+                <p className={Styles.item}>ほｇｗｊｇぱ</p>
+                <p className={Styles.item}>ほｇｗｊｇぱ</p>
+                </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>
