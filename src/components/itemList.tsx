@@ -30,6 +30,7 @@ const ItemList: React.VFC = () => {
                 name
               }
             }
+            fieldValue
           }
         }
       }
@@ -44,30 +45,31 @@ const ItemList: React.VFC = () => {
 
           <Tab.Group>
             <Tab.List className={Styles.tabList}>
-              {allMicrocmsItem.group.map(({edges}) => (
-                edges.map(({node}) => (
-                  <Tab
-                    className={({selected}) => 
-                      selected ? `${Styles.tab} ${Styles.selected}` : `${Styles.tab}`}
-                    key={node.id}
-                    >
-                    {node.category}
-                  </Tab>
-                ))
+              {allMicrocmsItem.group.map(({fieldValue}) => (
+                <Tab
+                  className={({selected}) => 
+                    selected ? `${Styles.tab} ${Styles.selected}` : `${Styles.tab}`}
+                  key={fieldValue}
+                >
+                  {fieldValue}
+                </Tab>
               ))}
             </Tab.List>
 
             <Tab.Panels className={Styles.body}>
-              {allMicrocmsItem.group.map(({edges}) => (
-                edges.map(({node}) => (
-                  node?.category?.map((test) => (
-                    <Tab.Panel className={Styles.itemList}>
-                      gjaprjew
-                    </Tab.Panel>
-                  )
-                  )
-                )))
-              )}
+              {allMicrocmsItem.group.map(({edges}) => {
+                return (
+                  <Tab.Panel className={Styles.itemList}>
+                    {
+                      edges.map(({node}) => {
+                        return (
+                          <p>{node.name}</p>
+                        )
+                      })
+                    }
+                  </Tab.Panel>
+                )
+              })}
             </Tab.Panels>
             {/*
               <Tab.Panel className={Styles.itemList}>
