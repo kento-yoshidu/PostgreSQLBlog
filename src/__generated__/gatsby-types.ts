@@ -712,6 +712,62 @@ type MicrocmsNews_revisedAtArgs = {
   locale: Maybe<Scalars['String']>;
 };
 
+type MicrocmsItem = Node & {
+  readonly id: Scalars['ID'];
+  readonly parent: Maybe<Node>;
+  readonly children: ReadonlyArray<Node>;
+  readonly internal: Internal;
+  readonly createdAt: Maybe<Scalars['Date']>;
+  readonly updatedAt: Maybe<Scalars['Date']>;
+  readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly revisedAt: Maybe<Scalars['Date']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly image: Maybe<MicrocmsItemImage>;
+  readonly price: Maybe<Scalars['Int']>;
+  readonly body: Maybe<Scalars['String']>;
+  readonly category: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly sortIndex: Maybe<Scalars['Int']>;
+  readonly itemId: Maybe<Scalars['String']>;
+};
+
+
+type MicrocmsItem_createdAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+type MicrocmsItem_updatedAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+type MicrocmsItem_publishedAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+type MicrocmsItem_revisedAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+type MicrocmsItemImage = {
+  readonly url: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['Int']>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
 type MicrocmsBlog = Node & {
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
@@ -809,6 +865,8 @@ type Query = {
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly microcmsNews: Maybe<MicrocmsNews>;
   readonly allMicrocmsNews: MicrocmsNewsConnection;
+  readonly microcmsItem: Maybe<MicrocmsItem>;
+  readonly allMicrocmsItem: MicrocmsItemConnection;
   readonly microcmsBlog: Maybe<MicrocmsBlog>;
   readonly allMicrocmsBlog: MicrocmsBlogConnection;
 };
@@ -1068,6 +1126,33 @@ type Query_microcmsNewsArgs = {
 type Query_allMicrocmsNewsArgs = {
   filter: Maybe<MicrocmsNewsFilterInput>;
   sort: Maybe<MicrocmsNewsSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+type Query_microcmsItemArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  createdAt: Maybe<DateQueryOperatorInput>;
+  updatedAt: Maybe<DateQueryOperatorInput>;
+  publishedAt: Maybe<DateQueryOperatorInput>;
+  revisedAt: Maybe<DateQueryOperatorInput>;
+  name: Maybe<StringQueryOperatorInput>;
+  image: Maybe<MicrocmsItemImageFilterInput>;
+  price: Maybe<IntQueryOperatorInput>;
+  body: Maybe<StringQueryOperatorInput>;
+  category: Maybe<StringQueryOperatorInput>;
+  sortIndex: Maybe<IntQueryOperatorInput>;
+  itemId: Maybe<StringQueryOperatorInput>;
+};
+
+
+type Query_allMicrocmsItemArgs = {
+  filter: Maybe<MicrocmsItemFilterInput>;
+  sort: Maybe<MicrocmsItemSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -3246,6 +3331,190 @@ type MicrocmsNewsSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type MicrocmsItemImageFilterInput = {
+  readonly url: Maybe<StringQueryOperatorInput>;
+  readonly height: Maybe<IntQueryOperatorInput>;
+  readonly width: Maybe<IntQueryOperatorInput>;
+};
+
+type MicrocmsItemConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<MicrocmsItemEdge>;
+  readonly nodes: ReadonlyArray<MicrocmsItem>;
+  readonly pageInfo: PageInfo;
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly group: ReadonlyArray<MicrocmsItemGroupConnection>;
+};
+
+
+type MicrocmsItemConnection_distinctArgs = {
+  field: MicrocmsItemFieldsEnum;
+};
+
+
+type MicrocmsItemConnection_maxArgs = {
+  field: MicrocmsItemFieldsEnum;
+};
+
+
+type MicrocmsItemConnection_minArgs = {
+  field: MicrocmsItemFieldsEnum;
+};
+
+
+type MicrocmsItemConnection_sumArgs = {
+  field: MicrocmsItemFieldsEnum;
+};
+
+
+type MicrocmsItemConnection_groupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: MicrocmsItemFieldsEnum;
+};
+
+type MicrocmsItemEdge = {
+  readonly next: Maybe<MicrocmsItem>;
+  readonly node: MicrocmsItem;
+  readonly previous: Maybe<MicrocmsItem>;
+};
+
+type MicrocmsItemFieldsEnum =
+  | 'id'
+  | 'parent.id'
+  | 'parent.parent.id'
+  | 'parent.parent.parent.id'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.children.children'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.children'
+  | 'parent.children.id'
+  | 'parent.children.parent.id'
+  | 'parent.children.parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.children.children'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'children'
+  | 'children.id'
+  | 'children.parent.id'
+  | 'children.parent.parent.id'
+  | 'children.parent.parent.children'
+  | 'children.parent.children'
+  | 'children.parent.children.id'
+  | 'children.parent.children.children'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.children'
+  | 'children.children.id'
+  | 'children.children.parent.id'
+  | 'children.children.parent.children'
+  | 'children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.children.children'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'publishedAt'
+  | 'revisedAt'
+  | 'name'
+  | 'image.url'
+  | 'image.height'
+  | 'image.width'
+  | 'price'
+  | 'body'
+  | 'category'
+  | 'sortIndex'
+  | 'itemId';
+
+type MicrocmsItemGroupConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<MicrocmsItemEdge>;
+  readonly nodes: ReadonlyArray<MicrocmsItem>;
+  readonly pageInfo: PageInfo;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+};
+
+type MicrocmsItemFilterInput = {
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
+  readonly createdAt: Maybe<DateQueryOperatorInput>;
+  readonly updatedAt: Maybe<DateQueryOperatorInput>;
+  readonly publishedAt: Maybe<DateQueryOperatorInput>;
+  readonly revisedAt: Maybe<DateQueryOperatorInput>;
+  readonly name: Maybe<StringQueryOperatorInput>;
+  readonly image: Maybe<MicrocmsItemImageFilterInput>;
+  readonly price: Maybe<IntQueryOperatorInput>;
+  readonly body: Maybe<StringQueryOperatorInput>;
+  readonly category: Maybe<StringQueryOperatorInput>;
+  readonly sortIndex: Maybe<IntQueryOperatorInput>;
+  readonly itemId: Maybe<StringQueryOperatorInput>;
+};
+
+type MicrocmsItemSortInput = {
+  readonly fields: Maybe<ReadonlyArray<Maybe<MicrocmsItemFieldsEnum>>>;
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
+};
+
 type MicrocmsBlogImageFilterInput = {
   readonly url: Maybe<StringQueryOperatorInput>;
   readonly height: Maybe<IntQueryOperatorInput>;
@@ -3445,21 +3714,6 @@ type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray
         & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
       ) }> } };
 
-type BlogPageQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-type BlogPageQuery = { readonly microcmsBlog: Maybe<(
-    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
-    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-  )> };
-
-type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -3486,10 +3740,30 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
+type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+
+type BlogPageQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+type BlogPageQuery = { readonly microcmsBlog: Maybe<(
+    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
+    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+  )> };
+
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type ItemListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ItemListQuery = { readonly allMicrocmsItem: { readonly group: ReadonlyArray<{ readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsItem, 'id' | 'category' | 'name'> }> }> } };
 
 type OldNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
