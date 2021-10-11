@@ -12,17 +12,19 @@ const ItemList: React.VFC = () => {
       query ItemList {
         allMicrocmsItem {
           group(field: category) {
+            fieldValue
             edges {
               node {
                 id
                 category
                 name
+                price
+                body
                 image {
                   url
                 }
               }
             }
-            fieldValue
           }
         }
       }
@@ -59,7 +61,9 @@ const ItemList: React.VFC = () => {
                       <div className={Styles.imgWrapper}>
                         <img src={node.image.url} />
                       </div>
-                      <p>{node.name}</p>
+                      <p className={Styles.itemName}>{node.name}</p>
+                      <p className={Styles.itemPrice}>{node.price}円</p>
+                      <p className={Styles.itemBody}>{node.body}</p>
                     </div>
                   ))}
                 </Tab.Panel>
