@@ -24,3 +24,13 @@
 		}
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.fixedHeader {
+		h1 {
+			a {
+				font-size: 1.2rem;	
+			}
+		}
+	}
+}

@@ -8,7 +8,6 @@ import NewsList from "../components/newsList"
 import BlogList from "../components/blogList"
 import ItemList from "../components/itemList"
 import Footer from "../components/footer"
-//import Switch from "../UI/UIButton"
 
 import "../scss/style.scss"
 
@@ -17,13 +16,14 @@ const IndexPage: React.VFC = () => {
     <Layout>
       <FixedHeader />
 
-      <StaticImage
-        src="../images/topimage.jpg"
-        alt="珈琲の画像"
-        placeholder="blurred"
-        className="img"
-        objectPosition={0}
-      />
+        <StaticImage
+          src="../images/topimage.jpg"
+          alt="珈琲の画像"
+          placeholder="blurred"
+          //className="img"
+          //objectPosition={0}
+          objectFit="cover"
+        />
 
       <main>
 
