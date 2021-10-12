@@ -16,14 +16,15 @@ const IndexPage: React.VFC = () => {
     <Layout>
       <FixedHeader />
 
+      <div className="heroWrapper">
         <StaticImage
           src="../images/topimage.jpg"
           alt="珈琲の画像"
           placeholder="blurred"
-          //className="img"
-          //objectPosition={0}
+          className="img"
           objectFit="cover"
         />
+      </div>
 
       <main>
 
