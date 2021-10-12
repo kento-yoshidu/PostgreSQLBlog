@@ -67,6 +67,7 @@ const BlogList: React.VFC = () =>{
 
 			<Button
 				link="/"
+				text="more"
 			/>
 		</section>
 	)

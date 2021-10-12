@@ -9,7 +9,7 @@ const FixedHeader: React.VFC = () => {
 		<header className={Styles.fixedHeader}>
 			<h1>
 				<Link to="/">
-					Gatsby Sample WebSite
+					Gatsby-microCMS-Site
 				</Link>
 			</h1>
 		</header>
