@@ -33,3 +33,24 @@
 		}
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.footer {
+		.wrapper {
+			padding: 30px 0;
+			.footerTitle {
+				font-size: 1.5rem;
+			}
+			p {
+				font-size: 1.2rem;
+			}
+			ul {
+				li {
+					a {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+}

@@ -3701,15 +3701,10 @@ type MicrocmsBlogSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type BlogPageQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
+type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogPageQuery = { readonly microcmsBlog: Maybe<(
-    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
-    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-  )> };
+type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
 
 type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3719,15 +3714,15 @@ type BlogListQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray
         & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
       ) }> } };
 
-type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
+type BlogPageQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
 
 
-type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
+type BlogPageQuery = { readonly microcmsBlog: Maybe<(
+    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
+    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+  )> };
 
 type ItemListQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3739,6 +3734,11 @@ type ItemListQuery = { readonly allMicrocmsItem: { readonly group: ReadonlyArray
           & { readonly image: Maybe<Pick<MicrocmsItemImage, 'url'>> }
         ) }> }
     )> } };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3771,14 +3771,14 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type CurrentNewsListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type CurrentNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
 type OldNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type OldNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+
+type CurrentNewsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type CurrentNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
 
 }

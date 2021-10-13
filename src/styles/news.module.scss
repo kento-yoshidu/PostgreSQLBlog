@@ -1,4 +1,5 @@
 .main {
+	position: relative;
 	.newsList {
 		width: 50%;
 		margin: 0 auto;
@@ -34,8 +35,28 @@
 
 @media screen and (max-width: 768px) {
 	.main {
+		padding: 50px 0 0;
 		.newsList {
-			width: 95%;
+			width: 85%;
+			padding: 0;
+			margin-bottom: 5vh;
+			.newsListItem {
+				padding-top: 3vh;
+				margin-bottom: 5vh;
+				h2 {
+					margin-bottom: 15px;
+					font-size: 1.5rem;
+					line-height: 1.5;
+				}
+				time {
+					margin-bottom: 25px;
+					font-size: 1rem;
+				}
+				p {
+					width: 95%;
+					font-size: 1rem;
+				}
+			}
 		}
 	}	
 }

@@ -19,13 +19,13 @@
 				margin-right: 50px;
 				font-size: 1rem;
 				font-weight: 700;
-				letter-spacing: 2px;
 			}
 			a {
 				color: #444;
 				font-size: 1rem;
 				font-weight: 700;
 				text-decoration: none;
+				line-height: 1.5;
 				&:hover {
 					color: $main-color;
 				}
@@ -37,13 +37,12 @@
 @media screen and (max-width: 768px) {
 	.section {
 		ul {
-			width: 95%;
+			width: 87%;
 			li {
 				flex-direction: column;
 				time {
 					margin: 0 0 15px 0;
 					font-size: 0.85rem;
-					letter-spacing: 1px;
 				}
 				a {
 					font-size: 0.95rem;
