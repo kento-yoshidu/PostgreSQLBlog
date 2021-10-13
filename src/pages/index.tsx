@@ -21,8 +21,7 @@ const IndexPage: React.VFC = () => {
           src="../images/topimage.jpg"
           alt="珈琲の画像"
           placeholder="blurred"
-          className="img"
-          objectFit="cover"
+          class="img"
         />
       </div>
 
