@@ -29,7 +29,6 @@ const News: React.VFC<Props> = ({data}) => (
 				alt="珈琲の画像"
 				placeholder="blurred"
 				className="img"
-				objectFit="cover"
 			/>
 		</div>
 

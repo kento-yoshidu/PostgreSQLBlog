@@ -1,7 +1,6 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Tab } from '@headlessui/react'
-import { StaticImage } from "gatsby-plugin-image"
 
 const Styles = require("../styles/itemList.module.scss")
 
