@@ -1,7 +1,7 @@
 .button {
 	position: absolute;
 	bottom: 3%;
-	right: 10%;
+	right: 20%;
 	font-size: 1.3rem;
 	display:inline-block;
 	padding:10px 30px 10px 20px;
@@ -33,4 +33,15 @@
     width: 60px;
 		border-color: #222;
 	}
+}
+
+@media screen and (max-width: 768px) {
+	.button {
+		font-size: 1rem;
+		margin: 0;
+		&::after {
+			left: 80%;
+			width: 35px
+		}
+	}	
 }

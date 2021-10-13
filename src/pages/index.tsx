@@ -33,7 +33,7 @@ const IndexPage: React.VFC = () => {
         <BlogList />
 
         <ItemList />
-        {/*<Switch />*/}
+
         <Footer />
 
       </main>
