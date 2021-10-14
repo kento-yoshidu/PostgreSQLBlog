@@ -15,10 +15,12 @@ GatsbyとmicroCMSを組み合わせたWebサイト
 - 🐺 SCSS
 - 🦄 CSS Modules
 
-## 感想
+## 感想とか
 
 - お知らせ、ブログ記事、商品情報をmicroCMSを利用して管理できたからヨシ🐱‍👓
 
 - 商品の紹介のところのタブ機能にHeadless UIを使った。何となく使用感がわかったからヨシ🐱‍👓
 
-- `Gatsby v3`で導入された`gatsby-plugin-image`の中で`StaticImage`と`GatsbyImage`を使った。`GatsbyImage`の方はpropsに渡すときに使う。ハマったが最終的にある程度使えるようになったからヨシ🐱‍👓
+- `Gatsby v3`で導入された`gatsby-plugin-image`の中で`StaticImage`と`GatsbyImage`を使った。`GatsbyImage`の方はpropsに渡すときに使う。ハマったが最終的にある程度使えるようになったからヨシ🐱‍👓。でもやっぱりGatsbyで画像を扱うのはちょっとだけ重い😥
+
+- microCMSで管理してる画像の最適化はどうすればいいの？😫
