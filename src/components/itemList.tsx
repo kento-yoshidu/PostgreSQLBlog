@@ -20,7 +20,9 @@ const ItemList: React.VFC = () => {
                 price
                 body
                 image {
+                  height
                   url
+                  width
                 }
               }
             }
@@ -58,7 +60,11 @@ const ItemList: React.VFC = () => {
                       key={node.id}
                     >
                       <div className={Styles.imgWrapper}>
-                        <img src={node.image.url} />
+                        <img
+                          src={node.image.url}
+                          width={node.image.width}
+                          height={node.image.height}
+                        />
                       </div>
                       <p className={Styles.itemName}>{node.name}</p>
                       <p className={Styles.itemPrice}>{node.price}円</p>
