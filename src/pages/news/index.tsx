@@ -4,7 +4,6 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import FixedHeader from "../../components/fixedHeader"
 import Button from "../../components/button"
 import Footer from "../../components/footer"
 
@@ -20,8 +19,6 @@ const News: React.VFC<Props> = ({data}) => (
 		<Seo
 			pageTitle="最新のお知らせ一覧"
 		/>
-
-		<FixedHeader />
 
 		<div className="heroWrapper">
 			<StaticImage

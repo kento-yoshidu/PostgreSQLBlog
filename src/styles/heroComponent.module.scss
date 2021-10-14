@@ -1,0 +1,18 @@
+.heroWrapper {
+	position: sticky;
+  top: 8vh;
+  height: 100vh;
+  width: 100%;
+  .img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroWrapper {
+    height: 70vh;
+    .img {
+      height: 100%;
+    }
+  } 
+}
