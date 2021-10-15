@@ -9,7 +9,9 @@ const ItemList: React.VFC = () => {
   const { allMicrocmsItem } = useStaticQuery<GatsbyTypes.ItemListQuery>(
     graphql`
       query ItemList {
-        allMicrocmsItem {
+        allMicrocmsItem (
+          sort: {fields: No}
+        ) {
           group(field: category) {
             fieldValue
             edges {
