@@ -32,12 +32,10 @@
 		letter-spacing: 1px;
 		text-indent: 1rem;
 	}
-
 	img {
 		width: 95%;
 		box-shadow: 0 0 3px 3px #eee;
 	}
-
 	blockquote {
 		padding: 15px 30px;
 		background-color: #ccc;
@@ -57,6 +55,31 @@
 
 @media screen and (max-width: 768px) {
 	.blogPost {
-		width: 95%;
+		width: 90%;
+		border: 1px solid red;
+		h1 {
+			font-size: 2rem;
+			width: 85%;
+		}
+		h2 {
+			font-size: 1.6rem;
+		}
+		h3 {
+			font-size: 1.2rem;
+		}
+		p {
+			font-size: 1rem;
+		}
+		blockquote {
+			padding: 10px 18px;
+			width: 85%;
+			font-size: 0.9rem
+		}
+		ul, ol {
+			width: 90%;
+			li {
+				font-size: 1rem
+			};
+		}
 	}	
 }
