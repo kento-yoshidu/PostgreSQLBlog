@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import BlogHero from "../../components/blogHero"
 import Button from "../../components/button"
+import HomeButton from "../../components/homeButton"
 import Footer from "../../components/footer"
 
 const Styles = require("../../styles/blogPost.module.scss")
@@ -32,6 +33,8 @@ const BlogPage: React.VFC<Props> = ({ data, location }) => {
         }}
         className={Styles.blogPost}
       />
+
+      <HomeButton />
 
       <Footer />
 

@@ -3,7 +3,6 @@
 .blogPost {
 	width: 50%;
 	margin: 0 auto;
-	padding-bottom: 50px;
 
 	h1,
 	h2,
@@ -70,7 +69,7 @@
 
 @media screen and (max-width: 768px) {
 	.blogPost {
-		width: 90%;
+		width: 88%;
 		h1 {
 			margin-bottom: 20px;
 			font-size: 1.8rem;
