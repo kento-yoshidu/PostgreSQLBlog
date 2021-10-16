@@ -8,13 +8,13 @@ type Props = {
 	text: string
 }
 
-const Button: React.VFC<Props> = ({link}) => (
+const Button: React.VFC<Props> = ({link, text}) => (
 	<div className={Styles.wrapper}>
 		<Link
 			to={link}
 			className={Styles.button}
 		>
-			<span>more</span>
+			<span>{text}</span>
 		</Link>
 	</div>
 )
