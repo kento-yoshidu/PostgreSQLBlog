@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import HeroComponent from "../../components/heroComponent"
-import Button from "../../components/button"
+import LinkButton from "../../components/linkButton"
 import HomeButton from "../../components/homeButton"
 import Footer from "../../components/footer"
 
@@ -49,7 +49,7 @@ const OldNews: React.VFC<Props> = ({data}) => (
 				))}
 			</ul>
 
-			<Button
+			<LinkButton
 				link="/news/"
 				text="最新のお知らせを見る"
 			/>
