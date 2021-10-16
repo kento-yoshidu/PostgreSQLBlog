@@ -33,11 +33,6 @@ const BlogPage: React.VFC<Props> = ({ data, location }) => {
         className={Styles.blogPost}
       />
 
-      <Button
-        link="/"
-        text="HOMR"
-      />
-
       <Footer />
 
     </Layout>
