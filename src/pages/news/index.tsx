@@ -1,11 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import HeroComponent from "../../components/heroComponent"
-import Button from "../../components/button"
+import LinkButton from "../../components/linkButton"
 import HomeButton from "../../components/homeButton"
 import Footer from "../../components/footer"
 
@@ -13,7 +12,7 @@ import "../../scss/style.scss"
 const Styles = require("../../styles/news.module.scss");
 
 type Props = {
-	data: GatsbyTypes.CurrentNewsListQuery
+	data: GatsbyTypes.NewsListQuery
 }
 
 const News: React.VFC<Props> = ({data}) => (
@@ -22,10 +21,14 @@ const News: React.VFC<Props> = ({data}) => (
 			pageTitle="最新のお知らせ一覧"
 		/>
 
-		<HeroComponent
-			image={data.file?.childImageSharp?.gatsbyImageData}
-			alt="カプチーノの画像"
-		/>
+		<div className="heroWrapper">
+			<StaticImage
+				src="../../images/news.jpg"
+				alt="珈琲の画像"
+				placeholder="blurred"
+				className="img"
+			/>
+		</div>
 
 		<main className={Styles.main}>
 			<ul className={Styles.newsList}>
@@ -50,7 +53,7 @@ const News: React.VFC<Props> = ({data}) => (
 				))}
 			</ul>
 
-			<Button
+			<LinkButton
 				link="/news/old/"
 				text="過去のお知らせを見る"
 			/>
@@ -60,36 +63,30 @@ const News: React.VFC<Props> = ({data}) => (
 			<Footer />
 		</main>
 	</Layout>
-	)
+)
 
 export default News
 
 export const CurrentNewsList = graphql`
-	query CurrentNewsList {
-		allMicrocmsNews(
-			filter: {
-				flag: {eq: true}
-			}
-			sort: {
-				fields: createdAt,
-				order: DESC
-			}
-		) {
-			edges {
-				node {
-					id
-					createdAt(formatString: "YYYY.MM.DD hh:mm")
-					title
-					body
-					newsId
+		query CurrentNewsList {
+			allMicrocmsNews(
+				filter: {
+					flag: {eq: true}
+				}
+				sort: {
+					fields: createdAt,
+					order: DESC
+				}
+			) {
+				edges {
+					node {
+						id
+						createdAt(formatString: "YYYY.MM.DD hh:mm")
+						title
+						body
+						newsId
+					}
 				}
 			}
 		}
-		file
-			(relativePath: {eq: "news.jpg"}) {
-				childImageSharp {
-					gatsbyImageData(layout: FULL_WIDTH)
-				}
-			}
-	}
-`
+	`
