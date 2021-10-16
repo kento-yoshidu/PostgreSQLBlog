@@ -2,73 +2,70 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import FixedHeader from "../../components/fixedHeader"
+import HeroComponent from "../../components/heroComponent"
 import Button from "../../components/button"
+import HomeButton from "../../components/homeButton"
 import Footer from "../../components/footer"
 
-import * as Styles from "../../styles/news.module.scss"
+const Styles = require("../../styles/news.module.scss")
 
 type Props = {
 	data: GatsbyTypes.OldNewsListQuery
 }
 
-const OldNews: React.VFC<Props> = ({data}) => {
-	return (
-		<>
-			<Seo
-				pageTitle="過去のお知らせ一覧"
+const OldNews: React.VFC<Props> = ({data}) => (
+	<Layout>
+		<Seo
+			pageTitle="過去のお知らせ一覧"
+		/>
+
+		<HeroComponent
+			image={data?.file?.childImageSharp?.gatsbyImageData}
+			alt="カプチーノの画像"
+		/>
+
+		<main className={Styles.main}>
+			<ul className={Styles.newsList}>
+				{data.allMicrocmsNews.edges.map(({node}) => (
+					<li
+						className={Styles.newsListItem}
+						key={node.id}
+						id={node.id}
+					>
+						<h2>
+							{node.title}
+						</h2>
+						<time>
+							{node.createdAt}
+						</time>
+						<div
+							dangerouslySetInnerHTML={{
+								__html: `${node.body}`
+							}}
+						/>
+					</li>
+				))}
+			</ul>
+
+			<Button
+				link="/news/"
+				text="最新のお知らせを見る"
 			/>
 
-			<FixedHeader />
+			<HomeButton />
 
-			<StaticImage
-				src="../../images/news.jpg"
-				alt="珈琲の画像"
-				placeholder="blurred"
-				className="img"
-				objectPosition={0}
-			/>
-
-			<main className={Styles.main}>
-				<ul className={Styles.newsList}>
-					{data.allMicrocmsNews.edges.map(({node}) => (
-						<li
-							className={Styles.newsListItem}
-							key={node.id}
-							id={node.id}
-						>
-							<h2>
-								{node.title}
-							</h2>
-							<time>
-								{node.createdAt}
-							</time>
-							<div
-								dangerouslySetInnerHTML={{
-									__html: `${node.body}`
-								}}
-							/>
-						</li>
-					))}
-
-					<Button
-						link="/news/"
-						text="最新のお知らせを見る"
-					/>
-				</ul>
-
-				<Footer />
-			</main>
-		</>
-	)
-}
+			<Footer />
+		</main>
+	</Layout>
+)
 
 export default OldNews
 
 export const CurrentNewsList = graphql`
 		query OldNewsList {
-			allMicrocmsNews(
+			allMicrocmsNews (
 				filter: {
 					flag: {eq: false}
 				}
@@ -85,6 +82,11 @@ export const CurrentNewsList = graphql`
 						body
 						newsId
 					}
+				}
+			}
+			file(relativePath: {eq: "news.jpg"}) {
+				childImageSharp {
+					gatsbyImageData(layout: FULL_WIDTH)
 				}
 			}
 		}

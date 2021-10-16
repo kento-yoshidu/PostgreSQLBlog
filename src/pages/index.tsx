@@ -2,7 +2,6 @@ import React/*, { useState, useEffect }*/ from 'react'
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import FixedHeader from "../components/fixedHeader"
 import HeroComponent from "../components/heroComponent"
 import NewsList from "../components/newsList"
 import BlogList from "../components/blogList"
