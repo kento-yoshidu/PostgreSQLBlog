@@ -3705,15 +3705,20 @@ type MicrocmsBlogSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
-
 type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+
+type BlogPageQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+type BlogPageQuery = { readonly microcmsBlog: Maybe<(
+    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
+    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+  )> };
 
 type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3733,16 +3738,6 @@ type ItemListQuery = { readonly allMicrocmsItem: { readonly group: ReadonlyArray
           & { readonly image: Maybe<Pick<MicrocmsItemImage, 'height' | 'url' | 'width'>> }
         ) }> }
     )> } };
-
-type BlogPageQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-type BlogPageQuery = { readonly microcmsBlog: Maybe<(
-    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
-    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-  )> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3770,24 +3765,29 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
+
 type HeroImageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type HeroImageQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> };
-
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type OldNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type OldNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> }, readonly file: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> };
 
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
 type CurrentNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type CurrentNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> }, readonly file: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> };
+type CurrentNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
 
 }

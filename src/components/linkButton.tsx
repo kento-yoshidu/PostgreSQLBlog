@@ -8,7 +8,7 @@ type Props = {
 	text: string
 }
 
-const Button: React.VFC<Props> = ({link, text}) => (
+const LinkButton: React.VFC<Props> = ({link, text}) => (
 	<div className={Styles.wrapper}>
 		<Link
 			to={link}
@@ -19,4 +19,4 @@ const Button: React.VFC<Props> = ({link, text}) => (
 	</div>
 )
 
-export default Button
+export default LinkButton
