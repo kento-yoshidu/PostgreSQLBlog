@@ -3,6 +3,13 @@
 .blogPost {
 	width: 50%;
 	margin: 0 auto;
+	padding-bottom: 50px;
+
+	h1,
+	h2,
+	h3 {
+		font-weight: 500;
+	}
 
 	h1 {
 		margin-bottom: 30px;
@@ -11,18 +18,19 @@
 		border-left: solid 5px $main-color;/*左線*/
 		border-bottom: solid 3px #d7d7d7;/*下線*/
 		color: #494949;/*文字色*/
-		font-size: 2.8rem;
+		font-size: 2.6rem;
+		line-height: 1.5;
 	}
 
 	h2 {
 		margin: 40px 0 0;
 		background: linear-gradient(transparent 70%, #7db4e6 70%);
-		font-size: 2.5rem;
+		font-size: 2.3rem;
 	}
 
 	h3 {
-		margin: 40px 0 0;
-		font-size: 2rem;
+		margin: 50px 0 0;
+		font-size: 1.8rem;
 	}
 
 	p {
@@ -44,11 +52,18 @@
 		line-height: 1.4;
 	}
 
-	ul {
+	ul, ol {
+		border: 2.5px solid #ddd;
+		border-radius: 3px;
 		list-style: none;
+		width: 92%;
+		margin: 15px auto;
+		padding: 15px 23px;
 		li {
-			font-size: 1.3rem;
-			margin-bottom: 15px;
+			font-size: 1.1rem;
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 }
@@ -56,9 +71,9 @@
 @media screen and (max-width: 768px) {
 	.blogPost {
 		width: 90%;
-		border: 1px solid red;
 		h1 {
-			font-size: 2rem;
+			margin-bottom: 20px;
+			font-size: 1.8rem;
 			width: 85%;
 		}
 		h2 {

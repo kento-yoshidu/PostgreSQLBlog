@@ -8,13 +8,15 @@ type Props = {
 	text: string
 }
 
-const Button: React.VFC<Props> = ({link, text}) => (
-	<Link
-		to={link}
-		className={Styles.button}
-	>
-		<span>{text}</span>
-	</Link>
+const Button: React.VFC<Props> = ({link}) => (
+	<div className={Styles.wrapper}>
+		<Link
+			to={link}
+			className={Styles.button}
+		>
+			<span>more</span>
+		</Link>
+	</div>
 )
 
 export default Button
