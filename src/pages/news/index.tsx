@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/layout"
+import HeroComponent from "../../components/heroComponent"
 import Seo from "../../components/seo"
 import LinkButton from "../../components/linkButton"
 import HomeButton from "../../components/homeButton"
@@ -21,14 +22,10 @@ const News: React.VFC<Props> = ({data}) => (
 			pageTitle="最新のお知らせ一覧"
 		/>
 
-		<div className="heroWrapper">
-			<StaticImage
-				src="../../images/news.jpg"
-				alt="珈琲の画像"
-				placeholder="blurred"
-				className="img"
-			/>
-		</div>
+		<HeroComponent
+			image={data.file?.childImageSharp?.gatsbyImageData}
+			alt="珈琲の画像"
+		/>
 
 		<main className={Styles.main}>
 			<ul className={Styles.newsList}>
@@ -69,6 +66,11 @@ export default News
 
 export const CurrentNewsList = graphql`
 		query CurrentNewsList {
+			file(relativePath: {eq: "news.jpg"}) {
+				childImageSharp {
+					gatsbyImageData(layout: FULL_WIDTH)
+				}
+			}
 			allMicrocmsNews(
 				filter: {
 					flag: {eq: true}
