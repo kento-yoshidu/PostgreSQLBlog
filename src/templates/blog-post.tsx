@@ -1,15 +1,50 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
-const BlogPostTemplate = ({ data }) => {
-  console.log(data) 
+import Layout from "../components/layout"
+import BlogHero from "../components/blogHero"
+import HomeButton from "../components/homeButton"
+import Footer from "../components/footer"
+
+const Styles = require("../styles/blogPost.module.scss")
+interface Props {
+  data: GatsbyTypes.BlogPostBySlugQuery
+}
+
+const BlogPostTemplate: React.VFC<Props> = ({ data }) => {
+  const post = data.microcmsBlog
+  const prev = data.previous
+  const next = data.next
 
   return (
-    <main
-      dangerouslySetInnerHTML={{
-        __html: `${data.microcmsBlog.body}`,
-      }}
-    />
+    <Layout>
+
+      <BlogHero
+        url={post.image.url}
+      />
+      <main
+        dangerouslySetInnerHTML={{
+          __html: `${post.body}`,
+        }}
+        className={Styles.blogPost}
+      />
+
+      {prev &&
+        <Link to={`/${prev.id}`}>
+          {prev.title}
+        </Link>
+      }
+
+      {next &&
+        <Link to={`/${next.id}`}>
+          {next.title}
+        </Link>
+      }
+
+      <HomeButton />
+
+      <Footer />
+    </Layout>
   )
 }
 
@@ -25,12 +60,16 @@ export const pageQuery = graphql`
       id
       title
       body
+      image {
+        url
+      }
     }
     previous: microcmsBlog(id: { eq: $previousPostId }) {
       id
       title
     }
     next: microcmsBlog(id: { eq: $nextPostId }) {
+      id
       title
     }
   }
