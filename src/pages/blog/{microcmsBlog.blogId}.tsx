@@ -16,22 +16,26 @@ type Props = {
 }
 
 const BlogPage: React.VFC<Props> = ({ data, location }) => {
+  console.log(data)
   return (
     <Layout
-      pageTitle={data.microcmsBlog?.title}
+      pageTitle={data.allMicrocmsBlog?.edges[0].node.title}
       pagepath={location.pathname}
     >
 
       <BlogHero
-        url={data.microcmsBlog?.image?.url}
+        url={data.allMicrocmsBlog?.edges[0].node.image?.url}
       />
 
       <main
         dangerouslySetInnerHTML={{
-          __html: `${data.microcmsBlog?.body}`,
+          __html: `${data.allMicrocmsBlog?.edges[0].node.body}`,
         }}
         className={Styles.blogPost}
       />
+
+      <p>{data?.allMicrocmsBlog?.edges?.next?.title}</p>
+      <p>{data?.allMicrocmsBlog?.edges?.previous?.title}</p>
 
       <HomeButton />
 
@@ -44,6 +48,34 @@ const BlogPage: React.VFC<Props> = ({ data, location }) => {
 export default BlogPage
 
 export const query = graphql`
+query BlogPage($id: String!) {
+  allMicrocmsBlog(filter: {id: {eq: $id}}) {
+    edges {
+      node {
+        blogId
+        title
+        body
+        image {
+          url
+        }
+        id
+      }
+      previous {
+        id
+        title
+      }
+      next {
+        id
+        title
+      }
+    }
+  }
+}
+`
+
+
+/*
+export const query = graphql`
   query BlogPage($id: String!) {
     microcmsBlog(id: { eq: $id }) {
       blogId
@@ -55,3 +87,4 @@ export const query = graphql`
     }
   }
 `
+*/
