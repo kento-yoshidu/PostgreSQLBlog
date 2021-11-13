@@ -6,12 +6,20 @@ import BlogHero from "../components/blogHero"
 import HomeButton from "../components/homeButton"
 import Footer from "../components/footer"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleRight, faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons"
+
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
+
 const Styles = require("../styles/blogPost.module.scss")
 interface Props {
   data: GatsbyTypes.BlogPostBySlugQuery
 }
 
 const BlogPostTemplate: React.VFC<Props> = ({ data }) => {
+
   const post = data.microcmsBlog
   const prev = data.previous
   const next = data.next
@@ -30,14 +38,30 @@ const BlogPostTemplate: React.VFC<Props> = ({ data }) => {
       />
 
       {prev &&
-        <Link to={`/${prev.id}`}>
-          {prev.title}
+        <Link
+          to={`/blog/${prev.id}/`}
+          className={Styles.prevLink}
+        >
+          <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+          <p
+            className={Styles.link}
+          >
+            {prev.title}
+          </p>
         </Link>
       }
 
       {next &&
-        <Link to={`/${next.id}`}>
-          {next.title}
+        <Link
+          className={Styles.nextLink}
+          to={`/blog/${next.id}/`}
+        >
+          <p
+            className={Styles.link}
+          >
+            {next.title}
+          </p>
+          <FontAwesomeIcon icon={faArrowAltCircleRight} />
         </Link>
       }
 
