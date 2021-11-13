@@ -1,4 +1,4 @@
-import type { GatsbyNode } from "gatsby"
+import type { GatsbyGraphQLEnumType, GatsbyNode } from "gatsby"
 import path from "path"
 
 const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
@@ -6,7 +6,7 @@ const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
 
   const BlogData = await graphql(
     `
-      query {
+      query BlogData {
         allMicrocmsBlog(
           sort: {
             fields: createdAt,
@@ -39,7 +39,7 @@ const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
     const nextPostId = index === BlogData.data.allMicrocmsBlog.edges.length - 1 ? null : BlogData.data.allMicrocmsBlog.edges[index + 1].node.id
 
     createPage({
-      path: edge.node.id,
+      path: `/blog/${edge.node.id}/`,
       component: path.resolve("./src/templates/blog-post.tsx"),
       context: {
         id: edge.node.id,

@@ -97,3 +97,35 @@
 		}
 	}	
 }
+
+.prevLink,
+.nextLink {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 35%;
+	margin: 50px auto;
+	padding: 15px 0;
+	border: 2px solid #888;
+	border-radius: 3px;
+	transition: 0.3s;
+	text-decoration: none;
+	&:hover {
+		background-color: rgba($main-color, 0.1);
+	}
+	svg {
+		color: $main-color;
+		font-size: 2rem;
+	}
+	.link {
+		display: block;
+		width: 80%;
+		color: #444;
+		font-size: 1.2rem;
+		line-height: 1.5;
+	}
+}
+
+.prevLink {
+
+}
