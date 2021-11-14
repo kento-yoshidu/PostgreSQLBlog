@@ -39,7 +39,7 @@ const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
     const nextPostId = index === BlogData.data.allMicrocmsBlog.edges.length - 1 ? null : BlogData.data.allMicrocmsBlog.edges[index + 1].node.id
 
     createPage({
-      path: `/blog/${edge.node.id}/`,
+      path: `/blog/${edge.node.blogId}/`,
       component: path.resolve("./src/templates/blog-post.tsx"),
       context: {
         id: edge.node.id,
