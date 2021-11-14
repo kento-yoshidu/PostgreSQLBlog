@@ -317,12 +317,6 @@ type SitePageContext = {
   readonly id: Maybe<Scalars['String']>;
   readonly previousPostId: Maybe<Scalars['String']>;
   readonly nextPostId: Maybe<Scalars['String']>;
-  readonly blogId: Maybe<Scalars['String']>;
-  readonly _xparams: Maybe<SitePageContext_xparams>;
-};
-
-type SitePageContext_xparams = {
-  readonly blogId: Maybe<Scalars['String']>;
 };
 
 type ImageFormat =
@@ -787,7 +781,6 @@ type MicrocmsBlog = Node & {
   readonly body: Maybe<Scalars['String']>;
   readonly sortIndex: Maybe<Scalars['Int']>;
   readonly blogId: Maybe<Scalars['String']>;
-  readonly gatsbyPath: Maybe<Scalars['String']>;
 };
 
 
@@ -836,11 +829,6 @@ type MicrocmsBlog_updateArgs = {
   fromNow: Maybe<Scalars['Boolean']>;
   difference: Maybe<Scalars['String']>;
   locale: Maybe<Scalars['String']>;
-};
-
-
-type MicrocmsBlog_gatsbyPathArgs = {
-  filePath: Maybe<Scalars['String']>;
 };
 
 type MicrocmsBlogImage = {
@@ -1178,7 +1166,6 @@ type Query_microcmsBlogArgs = {
   body: Maybe<StringQueryOperatorInput>;
   sortIndex: Maybe<IntQueryOperatorInput>;
   blogId: Maybe<StringQueryOperatorInput>;
-  gatsbyPath: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2277,12 +2264,6 @@ type SitePageContextFilterInput = {
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly previousPostId: Maybe<StringQueryOperatorInput>;
   readonly nextPostId: Maybe<StringQueryOperatorInput>;
-  readonly blogId: Maybe<StringQueryOperatorInput>;
-  readonly _xparams: Maybe<SitePageContext_xparamsFilterInput>;
-};
-
-type SitePageContext_xparamsFilterInput = {
-  readonly blogId: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginFilterInput = {
@@ -2517,8 +2498,6 @@ type SitePageFieldsEnum =
   | 'context.id'
   | 'context.previousPostId'
   | 'context.nextPostId'
-  | 'context.blogId'
-  | 'context._xparams.blogId'
   | 'pluginCreator.id'
   | 'pluginCreator.parent.id'
   | 'pluginCreator.parent.parent.id'
@@ -3675,8 +3654,7 @@ type MicrocmsBlogFieldsEnum =
   | 'update'
   | 'body'
   | 'sortIndex'
-  | 'blogId'
-  | 'gatsbyPath';
+  | 'blogId';
 
 type MicrocmsBlogGroupConnection = {
   readonly totalCount: Scalars['Int'];
@@ -3703,25 +3681,12 @@ type MicrocmsBlogFilterInput = {
   readonly body: Maybe<StringQueryOperatorInput>;
   readonly sortIndex: Maybe<IntQueryOperatorInput>;
   readonly blogId: Maybe<StringQueryOperatorInput>;
-  readonly gatsbyPath: Maybe<StringQueryOperatorInput>;
 };
 
 type MicrocmsBlogSortInput = {
   readonly fields: Maybe<ReadonlyArray<Maybe<MicrocmsBlogFieldsEnum>>>;
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
-
-type BlogPostBySlugQueryVariables = Exact<{
-  id: Scalars['String'];
-  previousPostId: Maybe<Scalars['String']>;
-  nextPostId: Maybe<Scalars['String']>;
-}>;
-
-
-type BlogPostBySlugQuery = { readonly microcmsBlog: Maybe<(
-    Pick<MicrocmsBlog, 'id' | 'title' | 'body'>
-    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-  )>, readonly previous: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>>, readonly next: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>> };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3743,15 +3708,17 @@ type OldNewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 type OldNewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> }, readonly file: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> };
 
-type BlogPageQueryVariables = Exact<{
+type BlogPostBySlugQueryVariables = Exact<{
   id: Scalars['String'];
+  previousPostId: Maybe<Scalars['String']>;
+  nextPostId: Maybe<Scalars['String']>;
 }>;
 
 
-type BlogPageQuery = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'blogId' | 'title' | 'body' | 'id'>
-        & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-      ), readonly previous: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>>, readonly next: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>> }> } };
+type BlogPostBySlugQuery = { readonly microcmsBlog: Maybe<(
+    Pick<MicrocmsBlog, 'id' | 'title' | 'body'>
+    & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
+  )>, readonly previous: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>>, readonly next: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>> };
 
 type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3772,15 +3739,15 @@ type ItemListQuery = { readonly allMicrocmsItem: { readonly group: ReadonlyArray
         ) }> }
     )> } };
 
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
-
 type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
