@@ -3,7 +3,6 @@
 .wrapper {
   margin: 30px 0 70px;
   text-align: center;
-
   .button {
     background-color: $main-color;
     padding: 12px 30px;
@@ -16,4 +15,14 @@
       background-color: lighten($main-color, 10%);
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin: 15px 0 30px;
+    .button {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  } 
 }

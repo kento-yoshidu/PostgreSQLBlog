@@ -39,7 +39,7 @@ const BlogPostTemplate: React.VFC<Props> = ({ data }) => {
 
       {prev &&
         <Link
-          to={`/blog/${prev.id}/`}
+          to={`/blog/${prev.blogId}/`}
           className={Styles.prevLink}
         >
           <FontAwesomeIcon icon={faArrowAltCircleLeft} />
@@ -54,7 +54,7 @@ const BlogPostTemplate: React.VFC<Props> = ({ data }) => {
       {next &&
         <Link
           className={Styles.nextLink}
-          to={`/blog/${next.id}/`}
+          to={`/blog/${next.blogId}/`}
         >
           <p
             className={Styles.link}
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
     $nextPostId: String
   ) {
     microcmsBlog(id: { eq: $id }) {
-      id
+      blogId
       title
       body
       image {
@@ -89,11 +89,11 @@ export const pageQuery = graphql`
       }
     }
     previous: microcmsBlog(id: { eq: $previousPostId }) {
-      id
+      blogId
       title
     }
     next: microcmsBlog(id: { eq: $nextPostId }) {
-      id
+      blogId
       title
     }
   }

@@ -3716,9 +3716,9 @@ type BlogPostBySlugQueryVariables = Exact<{
 
 
 type BlogPostBySlugQuery = { readonly microcmsBlog: Maybe<(
-    Pick<MicrocmsBlog, 'id' | 'title' | 'body'>
+    Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
     & { readonly image: Maybe<Pick<MicrocmsBlogImage, 'url'>> }
-  )>, readonly previous: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>>, readonly next: Maybe<Pick<MicrocmsBlog, 'id' | 'title'>> };
+  )>, readonly previous: Maybe<Pick<MicrocmsBlog, 'blogId' | 'title'>>, readonly next: Maybe<Pick<MicrocmsBlog, 'blogId' | 'title'>> };
 
 type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3739,15 +3739,15 @@ type ItemListQuery = { readonly allMicrocmsItem: { readonly group: ReadonlyArray
         ) }> }
     )> } };
 
-type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
-
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'lang' | 'description' | 'siteUrl' | 'locale'>> }> };
+
+type NewsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NewsListQuery = { readonly allMicrocmsNews: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsNews, 'id' | 'createdAt' | 'title' | 'body' | 'newsId'> }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
