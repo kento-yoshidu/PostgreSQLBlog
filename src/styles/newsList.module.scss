@@ -4,7 +4,7 @@
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
-	padding: 50px 0;
+	padding: 50px 0 20px;
 	background-color: rgba($main-color, 0.3);
 	ul {
 		margin: 0 auto;
@@ -36,6 +36,7 @@
 
 @media screen and (max-width: 768px) {
 	.section {
+		padding: 30px 0 10px;
 		ul {
 			width: 87%;
 			li {
