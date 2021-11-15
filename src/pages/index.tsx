@@ -23,6 +23,8 @@ const IndexPage: React.VFC<Props> = ({data}) => {
       <HeroComponent
         image={file?.childImageSharp?.gatsbyImageData}
         alt="珈琲の画像"
+        h1Title="Gatsby & microCMS site"
+        text="GatsbyとmicroCMSでJamstackなサイトを構築しました。"
       />
 
       <main>
