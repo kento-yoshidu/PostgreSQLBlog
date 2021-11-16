@@ -1,16 +1,16 @@
 .blogHero {
-	margin: 100px auto;
-	width: 50%;
-	img {
-		width:100%;
-		max-width: 100%;
-		height: auto;
-	}
+  margin: 100px auto;
+  width: 50%;
+  img {
+    width:100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.blogHero {
-		margin: 80px auto 50px;
-		width: 90%;
-	}	
+  .blogHero {
+    margin: 80px auto 50px;
+    width: 90%;
+  }	
 }

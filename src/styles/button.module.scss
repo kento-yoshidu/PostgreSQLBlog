@@ -1,52 +1,52 @@
 .wrapper {
-	text-align: right;
-	.button {
-		position: relative;
-		display: inline-block;
-		font-size: 1.5rem;
-		display:inline-block;
-		padding: 10px 30px 10px 20px;
-		text-align:center;
-		color:#666;
-		margin-right: 20vw;
-		cursor:pointer;
-		text-decoration: none;
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			top: calc(50% - 5px);
-			right: -20px;
-			width: 40px;
-			height: 10px;
-			border: none;
-			border-right: 3px solid #666;
-			border-bottom: 2px solid #666;
-			transform: skew(45deg);
-			transition: .3s;
-		}
-		&:hover {
-			color: #222;
-		}
-		&:hover::after {
-			right: -70px;
-			width: 90px;
-			border-color: #222;
-		}
-	}
+  text-align: right;
+  .button {
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+    display:inline-block;
+    padding: 10px 30px 10px 20px;
+    text-align:center;
+    color:#666;
+    margin-right: 20vw;
+    cursor:pointer;
+    text-decoration: none;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: calc(50% - 5px);
+      right: -20px;
+      width: 40px;
+      height: 10px;
+      border: none;
+      border-right: 3px solid #666;
+      border-bottom: 2px solid #666;
+      transform: skew(45deg);
+      transition: .3s;
+    }
+    &:hover {
+      color: #222;
+    }
+    &:hover::after {
+      right: -70px;
+      width: 90px;
+      border-color: #222;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.wrapper {
-		.button {
-			font-size: 1rem;
-			margin-right: 15vw;
-			padding: 5px 20px 5px 10px;
-			&::after {
-				left: 80%;
-				width: 30px
-			}
-		}	
+  .wrapper {
+    .button {
+      font-size: 1rem;
+      margin-right: 15vw;
+      padding: 5px 20px 5px 10px;
+      &::after {
+        left: 80%;
+        width: 30px
+      }
+    }	
 
-	}
+  }
 }

@@ -4,38 +4,38 @@ import { Link } from "gatsby"
 const Styles = require("../styles/footer.module.scss")
 
 const Footer: React.VFC = () => (
-	<footer className={Styles.footer}>
-		<div className={Styles.wrapper}>
-			<h1 className={Styles.footerTitle}>
-				Gatsby & microCMS Site
-			</h1>
-			<p>他のJamstackサイトを見る</p>
+  <footer className={Styles.footer}>
+    <div className={Styles.wrapper}>
+      <h1 className={Styles.footerTitle}>
+        Gatsby & microCMS Site
+      </h1>
+      <p>他のJamstackサイトを見る</p>
 
-			<ul>
-				<li>
-					<Link to="https://blog.toriwatari.work/page/1/">
-						鳥に生まれることができなかった人へ
-					</Link>
-				</li>
-				<li>
-					<Link to="https://cssanimation.toriwatari.work/">
-						CSS Animation & Tips
-					</Link>
-				</li>
-				<li>
-					<Link to="https://nuxtdentalclinic.netlify.app/">
-						Nuxt Dental Clinic
-					</Link>
-				</li>
-				<li>
-					<Link to="https://gatsbycafesite.netlify.app/">
-						Gatsby Cafe Site
-					</Link>
-				</li>
-			</ul>
-		</div>
+      <ul>
+        <li>
+          <Link to="https://blog.toriwatari.work/page/1/">
+            鳥に生まれることができなかった人へ
+          </Link>
+        </li>
+        <li>
+          <Link to="https://cssanimation.toriwatari.work/">
+            CSS Animation & Tips
+          </Link>
+        </li>
+        <li>
+          <Link to="https://nuxtdentalclinic.netlify.app/">
+            Nuxt Dental Clinic
+          </Link>
+        </li>
+        <li>
+          <Link to="https://gatsbycafesite.netlify.app/">
+            Gatsby Cafe Site
+          </Link>
+        </li>
+      </ul>
+    </div>
 
-	</footer>
+  </footer>
 )
 
 export default Footer

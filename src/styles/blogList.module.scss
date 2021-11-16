@@ -1,82 +1,82 @@
 @import "../scss/variables";
 
 .section {
-	position: relative;
-	width: 100%;
-	margin: 0 auto;
-	padding: 50px 0 80px;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0 80px;
 
-	.wrapper {
-		width: 70%;
-		margin: 0 auto;
-		h2 {
-			margin-bottom: 50px;
-			font-size: 2rem;
-		}
-		.blogList {
-			list-style: none;
-			display: flex;
-			flex-wrap: wrap;
+  .wrapper {
+    width: 70%;
+    margin: 0 auto;
+    h2 {
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+    .blogList {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
 
-			.listItem {
-				margin-right: 80px;
-				margin-bottom: 50px;
-				padding: 10px 10px;
-				width: 31%;
-				a {
-					display: block;
-					margin-bottom: 20px;
-					color: #444;
-					font-size: 1.3rem;
-					font-weight: 500;
-					transition: .2s;
-					line-height: 1.5;
-					&:hover {
-						color: $main-color;
-					}
-				}
-				.imgWrapper {
-					img {
-						width: 100%;
-						margin-bottom: 30px;
-						display: block;
-					}
-				}
-				.timeWrapper {
-					margin-bottom: 20px;
-					time {
-						font-size: 1rem;
-					}
-				}
-			}
-		}
-	}
+      .listItem {
+        margin-right: 80px;
+        margin-bottom: 50px;
+        padding: 10px 10px;
+        width: 31%;
+        a {
+          display: block;
+          margin-bottom: 20px;
+          color: #444;
+          font-size: 1.3rem;
+          font-weight: 500;
+          transition: .2s;
+          line-height: 1.5;
+          &:hover {
+            color: $main-color;
+          }
+        }
+        .imgWrapper {
+          img {
+            width: 100%;
+            margin-bottom: 30px;
+            display: block;
+          }
+        }
+        .timeWrapper {
+          margin-bottom: 20px;
+          time {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.section {
-		padding: 30px 0 40px;
-		.wrapper {
-			width: 80%;
-			h2 {
-				margin-bottom: 20px;
-				font-size: 1.8rem;
-			}
-			.blogList {
-				.listItem {
-					width: 100%;
-					margin: 0 auto 20px;
-					a {
-						font-size: 1.05rem;
-					}
-					.timeWrapper {
-						margin-bottom: 10px;
-						time {
-							font-size: 0.9rem;
-						}
-					}
-				}
-			}
-		}
-	}	
+  .section {
+    padding: 30px 0 40px;
+    .wrapper {
+      width: 80%;
+      h2 {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+      .blogList {
+        .listItem {
+          width: 100%;
+          margin: 0 auto 20px;
+          a {
+            font-size: 1.05rem;
+          }
+          .timeWrapper {
+            margin-bottom: 10px;
+            time {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }	
 }
