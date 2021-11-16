@@ -1,4 +1,4 @@
-import type { GatsbyGraphQLEnumType, GatsbyNode } from "gatsby"
+import type { GatsbyNode } from "gatsby"
 import path from "path"
 
 const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {

@@ -1,62 +1,62 @@
 .main {
-	position: relative;
-	.newsList {
-		width: 50%;
-		margin: 0 auto;
-		padding: 80px 0 30px;	
-		position: relative;
+  position: relative;
+  .newsList {
+    width: 50%;
+    margin: 0 auto;
+    padding: 80px 0 30px;	
+    position: relative;
 
-		.newsListItem {
-			padding-top: 5vh;
-			margin-bottom: 5vh;
-			list-style: none;
-			font-size: 2rem;
+    .newsListItem {
+      padding-top: 5vh;
+      margin-bottom: 5vh;
+      list-style: none;
+      font-size: 2rem;
 
-			h2 {
-				margin-bottom: 20px;
-				font-size: 1.8rem;
-				font-weight: 500;
-			}
-			time {
-				display: block;
-				margin-bottom: 40px;
-				font-size: 1.1rem;
-				font-weight: 500;
-			}
-			p {
-				font-size: 1.1rem;
-				text-indent: .8rem;
-				line-height: 1.5;
-				letter-spacing: 1px;
-			}
-		}
-	}
+      h2 {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+      time {
+        display: block;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+      p {
+        font-size: 1.1rem;
+        text-indent: .8rem;
+        line-height: 1.5;
+        letter-spacing: 1px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.main {
-		padding: 50px 0 0;
-		.newsList {
-			width: 85%;
-			padding: 0;
-			margin-bottom: 5vh;
-			.newsListItem {
-				padding-top: 3vh;
-				margin-bottom: 5vh;
-				h2 {
-					margin-bottom: 15px;
-					font-size: 1.5rem;
-					line-height: 1.5;
-				}
-				time {
-					margin-bottom: 25px;
-					font-size: 1rem;
-				}
-				p {
-					width: 95%;
-					font-size: 1rem;
-				}
-			}
-		}
-	}	
+  .main {
+    padding: 50px 0 0;
+    .newsList {
+      width: 85%;
+      padding: 0;
+      margin-bottom: 5vh;
+      .newsListItem {
+        padding-top: 3vh;
+        margin-bottom: 5vh;
+        h2 {
+          margin-bottom: 15px;
+          font-size: 1.5rem;
+          line-height: 1.5;
+        }
+        time {
+          margin-bottom: 25px;
+          font-size: 1rem;
+        }
+        p {
+          width: 95%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }	
 }
