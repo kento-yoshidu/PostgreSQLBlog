@@ -23,6 +23,7 @@ const OldNews: React.VFC<Props> = ({data}) => (
     <HeroComponent
       image={data?.file?.childImageSharp?.gatsbyImageData}
       alt="カプチーノの画像"
+      h1Title="過去のお知らせ一覧"
     />
 
     <main className={Styles.main}>

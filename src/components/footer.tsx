@@ -13,8 +13,8 @@ const Footer: React.VFC = () => (
 
       <ul>
         <li>
-          <Link to="https://blog.toriwatari.work/page/1/">
-            鳥に生まれることができなかった人へ
+          <Link to="https://ps.toriwatari.work/">
+            PortfolioSite
           </Link>
         </li>
         <li>
@@ -23,13 +23,8 @@ const Footer: React.VFC = () => (
           </Link>
         </li>
         <li>
-          <Link to="https://nuxtdentalclinic.netlify.app/">
-            Nuxt Dental Clinic
-          </Link>
-        </li>
-        <li>
-          <Link to="https://gatsbycafesite.netlify.app/">
-            Gatsby Cafe Site
+          <Link to="https://blog.toriwatari.work/page/1/">
+            鳥に生まれることができなかった人へ
           </Link>
         </li>
       </ul>
