@@ -25,6 +25,7 @@ const News: React.VFC<Props> = ({data}) => (
     <HeroComponent
       image={data.file?.childImageSharp?.gatsbyImageData}
       alt="珈琲の画像"
+      h1Title="最新のお知らせ一覧"
     />
 
     <main className={Styles.main}>
