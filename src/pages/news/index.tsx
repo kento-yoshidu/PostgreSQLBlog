@@ -9,7 +9,6 @@ import LinkButton from "../../components/linkButton"
 import HomeButton from "../../components/homeButton"
 import Footer from "../../components/footer"
 
-import "../../scss/style.scss"
 const Styles = require("../../styles/news.module.scss");
 
 type Props = {

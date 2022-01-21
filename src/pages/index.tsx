@@ -8,7 +8,7 @@ import BlogList from "../components/blogList"
 import ItemList from "../components/itemList"
 import Footer from "../components/footer"
 
-import "../scss/style.scss"
+import * as Styles from "../scss/style.module.scss"
 
 interface Props {
   data: GatsbyTypes.HeroImageQuery
@@ -27,7 +27,7 @@ const IndexPage: React.VFC<Props> = ({data}) => {
         text="GatsbyとmicroCMSでJamstackなサイトを構築しました。"
       />
 
-      <main>
+      <main className={Styles.main}>
         <NewsList />
 
         <BlogList />
@@ -42,8 +42,6 @@ const IndexPage: React.VFC<Props> = ({data}) => {
 }
 
 export default IndexPage
-
-//https://www.inkoop.io/blog/gatsby-3-image-a-deep-dive-into-the-new-image-api-features/
 
 export const Hero = graphql`
   query HeroImage {

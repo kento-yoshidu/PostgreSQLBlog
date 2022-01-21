@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { Link } from "gatsby"
 
-const Styles = require("../styles/fixedHeader.module.scss")
+import * as Styles from "../styles/fixedHeader.module.scss"
 
 const FixedHeader: React.VFC = () => {
   return (

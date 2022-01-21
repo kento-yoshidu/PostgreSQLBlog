@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image/dist/src/components/gatsby-image.browser"
 import { Tab } from '@headlessui/react'
 
-const Styles = require("../styles/itemList.module.scss")
+import * as Styles from "../styles/itemList.module.scss"
 
 const ItemList: React.VFC = () => {
 

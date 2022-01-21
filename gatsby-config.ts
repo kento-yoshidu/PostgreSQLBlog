@@ -25,7 +25,6 @@ const plugins: GatsbyConfig['plugins'] = [
     },
   },
   `gatsby-plugin-gatsby-cloud`,
-  // `gatsby-plugin-offline`,
   {
     resolve: "gatsby-source-microcms",
     options: {
@@ -45,7 +44,8 @@ const plugins: GatsbyConfig['plugins'] = [
     },
   },
   `gatsby-plugin-sass`,
-  `gatsby-plugin-typegen`
+  `gatsby-plugin-typegen`,
+  `gatsby-plugin-dts-css-modules`
 ]
 
 const siteMetadata: GatsbyConfig['siteMetadata'] = {

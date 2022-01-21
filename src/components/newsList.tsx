@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import LinkButton from "./linkButton"
 
-const Styles = require("../styles/newsList.module.scss")
+import * as Styles from "../styles/newsList.module.scss"
 
 const NewsList: React.VFC = () => {
 

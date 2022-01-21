@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-const Styles = require("../styles/footer.module.scss")
+import * as Styles from "../styles/footer.module.scss"
 
 const Footer: React.VFC = () => (
   <footer className={Styles.footer}>

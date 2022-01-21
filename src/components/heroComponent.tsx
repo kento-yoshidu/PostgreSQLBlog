@@ -1,8 +1,8 @@
-import * as React from "react"
+import React from "react"
 
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
-const Styles = require("../styles/heroComponent.module.scss")
+import * as Styles from "../styles/heroComponent.module.scss"
 
 interface Props {
   image: IGatsbyImageData
