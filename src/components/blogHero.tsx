@@ -1,6 +1,6 @@
 import React from "react"
 
-const Styles = require("../styles/blogHero.module.scss")
+import * as Styles from "../styles/blogHero.module.scss"
 
 type Props = {
   url: any

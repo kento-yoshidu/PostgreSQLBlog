@@ -13,7 +13,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const Styles = require("../styles/blogPost.module.scss")
+import * as Styles from "../styles/blogPost.module.scss"
 interface Props {
   data: GatsbyTypes.BlogPostBySlugQuery
 }

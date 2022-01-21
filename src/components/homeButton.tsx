@@ -1,7 +1,7 @@
-import * as React from "react"
+import React from "react"
 import { Link } from "gatsby"
 
-const Styles = require("../styles/homeButton.module.scss");
+import * as Styles from "../styles/homeButton.module.scss"
 
 const HomeButton = () => (
   <div className={Styles.wrapper}>

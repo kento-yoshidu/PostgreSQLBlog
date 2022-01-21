@@ -42,6 +42,7 @@
     "babel-loader": "^8.2.2",
     "esbuild": "^0.12.28",
     "esbuild-register": "^3.0.0",
+    "gatsby-plugin-dts-css-modules": "^2.2.0",
     "prettier": "2.3.2",
     "typescript": "^4.4.2"
   },

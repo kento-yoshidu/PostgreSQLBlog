@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 import LinkButton from "./linkButton"
 
-const Styles = require("../styles/blogList.module.scss")
+import * as Styles from "../styles/blogList.module.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUndo } from "@fortawesome/free-solid-svg-icons"
