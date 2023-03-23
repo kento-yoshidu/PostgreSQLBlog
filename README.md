@@ -1,26 +1,34 @@
-# Gatsby-microCMS
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-GatsbyとmicroCMSを組み合わせたWebサイト
+## Getting Started
 
-## 🌐 Webサイト
+First, run the development server:
 
-[Webサイト](https://gatsby-micro-cms.vercel.app)
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-## ⚙️ 構成要素
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- 🐶 Gatsby v3
-- 🐹 TypeScript
-- 🐼 microCMS 
-- 🐸 Headless UI
-- 🐺 SCSS
-- 🦄 CSS Modules
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-## 感想とか
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-- お知らせ、ブログ記事、商品情報をmicroCMSを利用して管理できたからヨシ🐱‍👓
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-- 商品の紹介のところのタブ機能にHeadless UIを使った。何となく使用感がわかったからヨシ🐱‍👓
+## Learn More
 
-- `Gatsby v3`で導入された`gatsby-plugin-image`の中で`StaticImage`と`GatsbyImage`を使った。`GatsbyImage`の方はpropsに渡すときに使う。ハマったが最終的にある程度使えるようになったからヨシ🐱‍👓。でもやっぱりGatsbyで画像を扱うのはちょっとだけ重い😥
+To learn more about Next.js, take a look at the following resources:
 
-- microCMSで管理してる画像の最適化はどうすればいいの？😫
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
