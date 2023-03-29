@@ -118,6 +118,7 @@ const siteMetadata: GatsbyConfig["siteMetadata"] = {
 }
 
 const config: GatsbyConfig = {
+  graphqlTypegen: true,
   siteMetadata,
   plugins
 }

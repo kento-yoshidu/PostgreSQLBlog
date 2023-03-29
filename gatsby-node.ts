@@ -1,4 +1,5 @@
 import type { GatsbyNode } from "gatsby"
+import { PageProps } from "gatsby"
 
 import path from "path"
 import fs from "fs"
@@ -11,7 +12,7 @@ const createPages: GatsbyNode["createPages"] = async ({ graphql, actions, report
   const { createPage } = actions
 
   const result = await graphql(`
-    {
+    query hoge {
       allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
         nodes {
           id
