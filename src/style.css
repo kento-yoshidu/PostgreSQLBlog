@@ -27,17 +27,6 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: "MontserratVariable", system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
-  --font-body: var(--fontFamily-serif);
-  --font-heading: var(--fontFamily-sans);
-  --fontWeight-normal: 400;
-  --fontWeight-bold: 700;
-  --fontWeight-black: 900;
   --fontSize-root: 16px;
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
@@ -73,10 +62,22 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    "Segoe UI",
+    "Helvetica Neue",
+    HelveticaNeue,
+    YuGothic,
+    "Yu Gothic Medium",
+    "Yu Gothic",
+    Verdana,
+    Meiryo,
+    sans-serif;
 }
 
 body {
-  font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
 }
@@ -99,11 +100,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
   margin-top: var(--spacing-12);
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
   letter-spacing: -0.025em;
+  font-weight: normal;
 }
 
 h2,
@@ -111,12 +112,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--fontWeight-bold);
   color: var(--color-heading);
 }
 
 h1 {
-  font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
   color: var(--color-heading-black);
 }
@@ -222,7 +221,11 @@ table {
 }
 
 table thead tr th {
-  border-bottom: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+table td {
+  border: 1px solid var(--color-accent);
 }
 
 /* Link */
@@ -278,8 +281,6 @@ a:focus {
 }
 
 .header-link-home {
-  font-weight: var(--fontWeight-bold);
-  font-family: var(--font-heading);
   text-decoration: none;
   font-size: var(--fontSize-2);
 }
@@ -306,7 +307,6 @@ a:focus {
 
 .blog-post header p {
   font-size: var(--fontSize-2);
-  font-family: var(--font-heading);
 }
 
 .blog-post-nav ul {

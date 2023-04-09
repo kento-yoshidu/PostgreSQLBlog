@@ -6,14 +6,14 @@ import fs from "fs"
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const blogPost = path.resolve(`./src/templates/blog-post.js`)
+const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
 
 const createPages: GatsbyNode["createPages"] = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const result = await graphql(`
     query hoge {
-      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         nodes {
           id
           fields {

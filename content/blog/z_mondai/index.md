@@ -1,13 +1,44 @@
 ---
 title: "問題"
-postdate: "2023-04-01"
-update: "2023-04-01"
+postdate: "2023-04-09"
+update: "2023-04-09"
 seriesName: "ハンズオンPostgreSQL"
 seriesSlug: "HandsOnPostgreSQL"
 tags: ["PostgreSQL", "Docker"]
 keywords: ["PostgreSQL", "Database", "DB", "Docker"]
 published: false
 ---
+
+# 重要度4
+
+## G1.2 運用管理用コマンド全般
+
+### GUCパラメーター
+
+再起動は(①)。
+
+
+|パラメーター|説明|
+|---|---|
+|②|ログ収集を行うか|
+
+### バックアップの種類
+
+pg_dump、pg_dumpallは(①)バックアップに分類される。tar/rsyncなどのコマンドによるバックアップは（②）バックアップに分類される。
+
+pg_dumpは(③)や(④)を指定できる。
+
+### PITR
+
+PITRを行うため、WALに書き込む内容を設定する(①)を(②)もしくは(③)にすること、WALアーカイブを保存するかを設定する(④)を(⑤)にすることが必要。なお、(④)はデフォルトで(⑤)になっている。
+
+参考 : [いつかDBがぶっ壊れるその日まで~ポイントインタイムリカバリ~ | 株式会社ロジカルスタジオ](https://www.wantedly.com/companies/logical-studio/post_articles/287569)
+
+### その他コマンド
+
+CLUSTERは(①)の並び順を適切に配置しなおす。
+
+VACUUMは(②)と(③)を処理する。
 
 
 ## pg_stat_activity
