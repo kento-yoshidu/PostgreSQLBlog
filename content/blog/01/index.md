@@ -1,7 +1,7 @@
 ---
 title: "#1 ハンズオンPostgreSQL"
-postdate: "2099-12-23"
-update: "2099-12-23"
+postdate: "2009-12-23"
+update: "2009-12-23"
 seriesName: "ハンズオンPostgreSQL"
 seriesSlug: "HandsOnPostgreSQL"
 tags: ["PostgreSQL", "OSS-DB"]
