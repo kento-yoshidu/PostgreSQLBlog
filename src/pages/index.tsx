@@ -41,6 +41,9 @@ const BlogIndex = ({ data, location }) => {
                   </h2>
                   <small>{post.frontmatter.date}</small>
                 </header>
+
+                <time>{post.frontmatter.postdate}</time>
+
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
@@ -74,7 +77,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(sort: { frontmatter: { postdate: DESC } }) {
       nodes {
         excerpt
         fields {
@@ -84,6 +87,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          postdate
         }
       }
     }

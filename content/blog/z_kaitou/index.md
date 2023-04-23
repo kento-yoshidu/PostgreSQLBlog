@@ -17,9 +17,23 @@ published: false
 
 |問題|解答|
 |---|--|
-| ① |logging_collector|
-| ② |logging_collector|
+| ① |postmaster|
+| ② |sighup|
+| ③ |superuser|
+| ④ |user|
+| ⑤ |logging_collector|
+| ⑥ |postmaster|
+| ⑦ |log_destination|
+| ⑧ |sighup|
+| ⑨ |log_line_prefix|
+| ⑩ |sighup|
+| ⑪ |log_min_message|
+| ⑫ |superuser|
+| ⑬ |log_connections|
+| ⑭ |wal_buffers|
+| ⑮ |log_duration|
 
+kk
 
 ### バックアップの種類
 
